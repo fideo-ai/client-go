@@ -1,9 +1,9 @@
 /*
 Fideo API
 
-This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about Swagger at [https://swagger.io](https://swagger.io). Some useful links: - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
+Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.0
+API version: 1.0.1
 Contact: support@fideo.ai
 */
 
@@ -13,6 +13,7 @@ package fideo
 
 import (
 	"encoding/json"
+	"gopkg.in/validator.v2"
 	"fmt"
 )
 
@@ -48,7 +49,11 @@ func (dst *VerifySignalsPost200Response) UnmarshalJSON(data []byte) error {
 		if string(jsonSignalsResponseV0) == "{}" { // empty struct
 			dst.SignalsResponseV0 = nil
 		} else {
-			match++
+			if err = validator.Validate(dst.SignalsResponseV0); err != nil {
+				dst.SignalsResponseV0 = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.SignalsResponseV0 = nil
@@ -61,7 +66,11 @@ func (dst *VerifySignalsPost200Response) UnmarshalJSON(data []byte) error {
 		if string(jsonSignalsResponseV20240424) == "{}" { // empty struct
 			dst.SignalsResponseV20240424 = nil
 		} else {
-			match++
+			if err = validator.Validate(dst.SignalsResponseV20240424); err != nil {
+				dst.SignalsResponseV20240424 = nil
+			} else {
+				match++
+			}
 		}
 	} else {
 		dst.SignalsResponseV20240424 = nil

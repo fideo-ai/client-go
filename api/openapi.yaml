@@ -3,16 +3,14 @@ info:
   contact:
     email: support@fideo.ai
   description: |-
-    This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about
-    Swagger at [https://swagger.io](https://swagger.io).
-    Some useful links:
+    Fideo Intelligence offers an identity intelligence product that protects the public good.
     - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.fideo.ai/terms-of-use/
   title: Fideo API
-  version: 1.0.0
+  version: 1.0.1
 externalDocs:
   description: Getting Started with Fideo
   url: https://docs.fideo.ai/docs/getting-started
