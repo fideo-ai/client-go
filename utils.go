@@ -1,9 +1,9 @@
 /*
 Fideo API
 
-This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about Swagger at [https://swagger.io](https://swagger.io). Some useful links: - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
+Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.0
+API version: 1.0.1
 Contact: support@fideo.ai
 */
 
@@ -12,7 +12,9 @@ Contact: support@fideo.ai
 package fideo
 
 import (
+	"bytes"
 	"encoding/json"
+	"fmt"
 	"reflect"
 	"time"
 )
@@ -345,4 +347,16 @@ func IsNil(i interface{}) bool {
 
 type MappedNullable interface {
 	ToMap() (map[string]interface{}, error)
+}
+
+// A wrapper for strict JSON decoding
+func newStrictDecoder(data []byte) *json.Decoder {
+	dec := json.NewDecoder(bytes.NewBuffer(data))
+	dec.DisallowUnknownFields()
+	return dec
+}
+
+// Prevent trying to import "fmt"
+func reportError(format string, a ...interface{}) error {
+	return fmt.Errorf(format, a...)
 }

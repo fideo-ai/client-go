@@ -1,9 +1,9 @@
 /*
 Fideo API
 
-This is a representation of the Fideo API based on the OpenAPI 3.0 specification.  You can find out more about Swagger at [https://swagger.io](https://swagger.io). Some useful links: - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
+Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.0
+API version: 1.0.1
 Contact: support@fideo.ai
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fideo API API v1.0.0
+// APIClient manages communication with the Fideo API API v1.0.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -500,18 +500,6 @@ func addFile(w *multipart.Writer, fieldName, path string) error {
 	_, err = io.Copy(part, file)
 
 	return err
-}
-
-// Prevent trying to import "fmt"
-func reportError(format string, a ...interface{}) error {
-	return fmt.Errorf(format, a...)
-}
-
-// A wrapper for strict JSON decoding
-func newStrictDecoder(data []byte) *json.Decoder {
-	dec := json.NewDecoder(bytes.NewBuffer(data))
-	dec.DisallowUnknownFields()
-	return dec
 }
 
 // Set request body from an interface{}

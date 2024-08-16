@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 api/openapi.yaml
@@ -69,6 +68,4 @@ model_social_profile_details.go
 model_social_profile_req.go
 model_social_profile_urls.go
 response.go
-test/api_signals_test.go
-test/api_verify_test.go
 utils.go
