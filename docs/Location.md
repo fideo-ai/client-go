@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AddressLine1** | Pointer to **string** |  | [optional] 
+**AddressLine2** | Pointer to **string** |  | [optional] 
 **City** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
 **RegionCode** | Pointer to **string** |  | [optional] 
@@ -30,6 +32,56 @@ will change when the set of required properties is changed
 NewLocationWithDefaults instantiates a new Location object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAddressLine1
+
+`func (o *Location) GetAddressLine1() string`
+
+GetAddressLine1 returns the AddressLine1 field if non-nil, zero value otherwise.
+
+### GetAddressLine1Ok
+
+`func (o *Location) GetAddressLine1Ok() (*string, bool)`
+
+GetAddressLine1Ok returns a tuple with the AddressLine1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddressLine1
+
+`func (o *Location) SetAddressLine1(v string)`
+
+SetAddressLine1 sets AddressLine1 field to given value.
+
+### HasAddressLine1
+
+`func (o *Location) HasAddressLine1() bool`
+
+HasAddressLine1 returns a boolean if a field has been set.
+
+### GetAddressLine2
+
+`func (o *Location) GetAddressLine2() string`
+
+GetAddressLine2 returns the AddressLine2 field if non-nil, zero value otherwise.
+
+### GetAddressLine2Ok
+
+`func (o *Location) GetAddressLine2Ok() (*string, bool)`
+
+GetAddressLine2Ok returns a tuple with the AddressLine2 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddressLine2
+
+`func (o *Location) SetAddressLine2(v string)`
+
+SetAddressLine2 sets AddressLine2 field to given value.
+
+### HasAddressLine2
+
+`func (o *Location) HasAddressLine2() bool`
+
+HasAddressLine2 returns a boolean if a field has been set.
 
 ### GetCity
 

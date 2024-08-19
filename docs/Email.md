@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **LastSeenMs** | Pointer to **int64** |  | [optional] 
 **Observations** | Pointer to **int32** |  | [optional] 
 **Confidence** | Pointer to **float64** |  | [optional] 
+**Value** | Pointer to **string** |  | [optional] 
 **Md5** | Pointer to **string** |  | [optional] 
 **Sha1** | Pointer to **string** |  | [optional] 
 **Sha256** | Pointer to **string** |  | [optional] 
@@ -132,6 +133,31 @@ SetConfidence sets Confidence field to given value.
 `func (o *Email) HasConfidence() bool`
 
 HasConfidence returns a boolean if a field has been set.
+
+### GetValue
+
+`func (o *Email) GetValue() string`
+
+GetValue returns the Value field if non-nil, zero value otherwise.
+
+### GetValueOk
+
+`func (o *Email) GetValueOk() (*string, bool)`
+
+GetValueOk returns a tuple with the Value field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValue
+
+`func (o *Email) SetValue(v string)`
+
+SetValue sets Value field to given value.
+
+### HasValue
+
+`func (o *Email) HasValue() bool`
+
+HasValue returns a boolean if a field has been set.
 
 ### GetMd5
 
