@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.1
+API version: 1.0.2
 Contact: support@fideo.ai
 */
 
@@ -24,6 +24,7 @@ type Email struct {
 	LastSeenMs *int64 `json:"lastSeenMs,omitempty"`
 	Observations *int32 `json:"observations,omitempty"`
 	Confidence *float64 `json:"confidence,omitempty"`
+	Value *string `json:"value,omitempty"`
 	Md5 *string `json:"md5,omitempty"`
 	Sha1 *string `json:"sha1,omitempty"`
 	Sha256 *string `json:"sha256,omitempty"`
@@ -174,6 +175,38 @@ func (o *Email) HasConfidence() bool {
 // SetConfidence gets a reference to the given float64 and assigns it to the Confidence field.
 func (o *Email) SetConfidence(v float64) {
 	o.Confidence = &v
+}
+
+// GetValue returns the Value field value if set, zero value otherwise.
+func (o *Email) GetValue() string {
+	if o == nil || IsNil(o.Value) {
+		var ret string
+		return ret
+	}
+	return *o.Value
+}
+
+// GetValueOk returns a tuple with the Value field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetValueOk() (*string, bool) {
+	if o == nil || IsNil(o.Value) {
+		return nil, false
+	}
+	return o.Value, true
+}
+
+// HasValue returns a boolean if a field has been set.
+func (o *Email) HasValue() bool {
+	if o != nil && !IsNil(o.Value) {
+		return true
+	}
+
+	return false
+}
+
+// SetValue gets a reference to the given string and assigns it to the Value field.
+func (o *Email) SetValue(v string) {
+	o.Value = &v
 }
 
 // GetMd5 returns the Md5 field value if set, zero value otherwise.
@@ -357,6 +390,9 @@ func (o Email) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Confidence) {
 		toSerialize["confidence"] = o.Confidence
+	}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
 	}
 	if !IsNil(o.Md5) {
 		toSerialize["md5"] = o.Md5
