@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.3
 Contact: support@fideo.ai
 */
 
@@ -42,7 +42,7 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fideo API API v1.0.2
+// APIClient manages communication with the Fideo API API v1.0.3
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration

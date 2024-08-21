@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.3
 Contact: support@fideo.ai
 */
 
@@ -27,7 +27,7 @@ type ApiVerifySignalsPostRequest struct {
 	ctx context.Context
 	ApiService *SignalsAPIService
 	v *string
-	multiFieldReq *MultiFieldReq
+	multiFieldReqWithOptions *MultiFieldReqWithOptions
 }
 
 func (r ApiVerifySignalsPostRequest) V(v string) ApiVerifySignalsPostRequest {
@@ -35,8 +35,8 @@ func (r ApiVerifySignalsPostRequest) V(v string) ApiVerifySignalsPostRequest {
 	return r
 }
 
-func (r ApiVerifySignalsPostRequest) MultiFieldReq(multiFieldReq MultiFieldReq) ApiVerifySignalsPostRequest {
-	r.multiFieldReq = &multiFieldReq
+func (r ApiVerifySignalsPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiVerifySignalsPostRequest {
+	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
 	return r
 }
 
@@ -99,7 +99,7 @@ func (a *SignalsAPIService) VerifySignalsPostExecute(r ApiVerifySignalsPostReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.multiFieldReq
+	localVarPostBody = r.multiFieldReqWithOptions
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

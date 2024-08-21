@@ -22,6 +22,7 @@ docs/LocationReq.md
 docs/LocationType.md
 docs/MatchResponse.md
 docs/MultiFieldReq.md
+docs/MultiFieldReqWithOptions.md
 docs/Name.md
 docs/NameWithAlias.md
 docs/PersonNameReq.md
@@ -56,6 +57,7 @@ model_location_req.go
 model_location_type.go
 model_match_response.go
 model_multi_field_req.go
+model_multi_field_req_with_options.go
 model_name.go
 model_name_with_alias.go
 model_person_name_req.go

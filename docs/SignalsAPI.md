@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## VerifySignalsPost
 
-> VerifySignalsPost200Response VerifySignalsPost(ctx).V(v).MultiFieldReq(multiFieldReq).Execute()
+> VerifySignalsPost200Response VerifySignalsPost(ctx).V(v).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 
 
 
@@ -28,11 +28,11 @@ import (
 
 func main() {
 	v := "v_example" // string |  (optional)
-	multiFieldReq := *openapiclient.NewMultiFieldReq() // MultiFieldReq |  (optional)
+	multiFieldReqWithOptions := *openapiclient.NewMultiFieldReqWithOptions() // MultiFieldReqWithOptions |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SignalsAPI.VerifySignalsPost(context.Background()).V(v).MultiFieldReq(multiFieldReq).Execute()
+	resp, r, err := apiClient.SignalsAPI.VerifySignalsPost(context.Background()).V(v).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SignalsAPI.VerifySignalsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiVerifySignalsPostRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **v** | **string** |  | 
- **multiFieldReq** | [**MultiFieldReq**](MultiFieldReq.md) |  | 
+ **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md) |  | 
 
 ### Return type
 
