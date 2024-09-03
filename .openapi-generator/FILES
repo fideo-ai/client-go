@@ -70,6 +70,4 @@ model_social_profile_req.go
 model_social_profile_urls.go
 model_verify_response.go
 response.go
-test/api_signals_test.go
-test/api_verify_test.go
 utils.go
