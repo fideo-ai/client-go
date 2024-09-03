@@ -34,16 +34,4 @@ func Test_fideo_SignalsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SignalsAPIService V3VerifySignalsPost", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SignalsAPI.V3VerifySignalsPost(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 }

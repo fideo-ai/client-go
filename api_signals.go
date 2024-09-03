@@ -40,7 +40,7 @@ func (r ApiSignalsPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions
 	return r
 }
 
-func (r ApiSignalsPostRequest) Execute() (*V3VerifySignalsPost200Response, *http.Response, error) {
+func (r ApiSignalsPostRequest) Execute() (*SignalsPost200Response, *http.Response, error) {
 	return r.ApiService.SignalsPostExecute(r)
 }
 
@@ -58,13 +58,13 @@ func (a *SignalsAPIService) SignalsPost(ctx context.Context) ApiSignalsPostReque
 }
 
 // Execute executes the request
-//  @return V3VerifySignalsPost200Response
-func (a *SignalsAPIService) SignalsPostExecute(r ApiSignalsPostRequest) (*V3VerifySignalsPost200Response, *http.Response, error) {
+//  @return SignalsPost200Response
+func (a *SignalsAPIService) SignalsPostExecute(r ApiSignalsPostRequest) (*SignalsPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *V3VerifySignalsPost200Response
+		localVarReturnValue  *SignalsPost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalsAPIService.SignalsPost")
@@ -73,120 +73,6 @@ func (a *SignalsAPIService) SignalsPostExecute(r ApiSignalsPostRequest) (*V3Veri
 	}
 
 	localVarPath := localBasePath + "/signals"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.v != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "form", "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.multiFieldReqWithOptions
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
-type ApiV3VerifySignalsPostRequest struct {
-	ctx context.Context
-	ApiService *SignalsAPIService
-	v *string
-	multiFieldReqWithOptions *MultiFieldReqWithOptions
-}
-
-func (r ApiV3VerifySignalsPostRequest) V(v string) ApiV3VerifySignalsPostRequest {
-	r.v = &v
-	return r
-}
-
-func (r ApiV3VerifySignalsPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiV3VerifySignalsPostRequest {
-	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
-	return r
-}
-
-func (r ApiV3VerifySignalsPostRequest) Execute() (*V3VerifySignalsPost200Response, *http.Response, error) {
-	return r.ApiService.V3VerifySignalsPostExecute(r)
-}
-
-/*
-V3VerifySignalsPost Method for V3VerifySignalsPost
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiV3VerifySignalsPostRequest
-*/
-func (a *SignalsAPIService) V3VerifySignalsPost(ctx context.Context) ApiV3VerifySignalsPostRequest {
-	return ApiV3VerifySignalsPostRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-//  @return V3VerifySignalsPost200Response
-func (a *SignalsAPIService) V3VerifySignalsPostExecute(r ApiV3VerifySignalsPostRequest) (*V3VerifySignalsPost200Response, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *V3VerifySignalsPost200Response
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalsAPIService.V3VerifySignalsPost")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v3/verify.signals"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
