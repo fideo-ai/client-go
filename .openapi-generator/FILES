@@ -22,6 +22,7 @@ docs/LocationReq.md
 docs/LocationType.md
 docs/MatchResponse.md
 docs/MultiFieldReq.md
+docs/MultiFieldReqWithOptions.md
 docs/Name.md
 docs/NameWithAlias.md
 docs/PersonNameReq.md
@@ -34,12 +35,12 @@ docs/SignalsResponseV20240424.md
 docs/SocialProfileDetails.md
 docs/SocialProfileReq.md
 docs/SocialProfileUrls.md
+docs/V3VerifySignalsPost200Response.md
 docs/VerifyAPI.md
-docs/VerifySignalsPost200Response.md
 git_push.sh
 go.mod
 go.sum
-model__verify_signals_post_200_response.go
+model__v3_verify_signals_post_200_response.go
 model_alias.go
 model_demographics.go
 model_economic.go
@@ -56,6 +57,7 @@ model_location_req.go
 model_location_type.go
 model_match_response.go
 model_multi_field_req.go
+model_multi_field_req_with_options.go
 model_name.go
 model_name_with_alias.go
 model_person_name_req.go
@@ -68,4 +70,6 @@ model_social_profile_details.go
 model_social_profile_req.go
 model_social_profile_urls.go
 response.go
+test/api_signals_test.go
+test/api_verify_test.go
 utils.go

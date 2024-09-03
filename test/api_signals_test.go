@@ -22,11 +22,23 @@ func Test_fideo_SignalsAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test SignalsAPIService VerifySignalsPost", func(t *testing.T) {
+	t.Run("Test SignalsAPIService SignalsPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SignalsAPI.VerifySignalsPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SignalsAPI.SignalsPost(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SignalsAPIService V3VerifySignalsPost", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SignalsAPI.V3VerifySignalsPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
