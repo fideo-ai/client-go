@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -23,63 +23,63 @@ import (
 // SignalsAPIService SignalsAPI service
 type SignalsAPIService service
 
-type ApiVerifySignalsPostRequest struct {
+type ApiSignalsPostRequest struct {
 	ctx context.Context
 	ApiService *SignalsAPIService
 	v *string
-	multiFieldReq *MultiFieldReq
+	multiFieldReqWithOptions *MultiFieldReqWithOptions
 }
 
-func (r ApiVerifySignalsPostRequest) V(v string) ApiVerifySignalsPostRequest {
+func (r ApiSignalsPostRequest) V(v string) ApiSignalsPostRequest {
 	r.v = &v
 	return r
 }
 
-func (r ApiVerifySignalsPostRequest) MultiFieldReq(multiFieldReq MultiFieldReq) ApiVerifySignalsPostRequest {
-	r.multiFieldReq = &multiFieldReq
+func (r ApiSignalsPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiSignalsPostRequest {
+	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
 	return r
 }
 
-func (r ApiVerifySignalsPostRequest) Execute() (*VerifySignalsPost200Response, *http.Response, error) {
-	return r.ApiService.VerifySignalsPostExecute(r)
+func (r ApiSignalsPostRequest) Execute() (*SignalsPost200Response, *http.Response, error) {
+	return r.ApiService.SignalsPostExecute(r)
 }
 
 /*
-VerifySignalsPost Method for VerifySignalsPost
+SignalsPost Method for SignalsPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifySignalsPostRequest
+ @return ApiSignalsPostRequest
 */
-func (a *SignalsAPIService) VerifySignalsPost(ctx context.Context) ApiVerifySignalsPostRequest {
-	return ApiVerifySignalsPostRequest{
+func (a *SignalsAPIService) SignalsPost(ctx context.Context) ApiSignalsPostRequest {
+	return ApiSignalsPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VerifySignalsPost200Response
-func (a *SignalsAPIService) VerifySignalsPostExecute(r ApiVerifySignalsPostRequest) (*VerifySignalsPost200Response, *http.Response, error) {
+//  @return SignalsPost200Response
+func (a *SignalsAPIService) SignalsPostExecute(r ApiSignalsPostRequest) (*SignalsPost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifySignalsPost200Response
+		localVarReturnValue  *SignalsPost200Response
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalsAPIService.VerifySignalsPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SignalsAPIService.SignalsPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/verify.signals"
+	localVarPath := localBasePath + "/signals"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.v != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
@@ -99,7 +99,7 @@ func (a *SignalsAPIService) VerifySignalsPostExecute(r ApiVerifySignalsPostReque
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.multiFieldReq
+	localVarPostBody = r.multiFieldReqWithOptions
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

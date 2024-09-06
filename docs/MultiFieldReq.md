@@ -28,10 +28,6 @@ Name | Type | Description | Notes
 **Phone** | Pointer to **string** |  | [optional] 
 **Profile** | Pointer to [**SocialProfileReq**](SocialProfileReq.md) |  | [optional] 
 **Maid** | Pointer to **string** |  | [optional] 
-**Infer** | Pointer to **bool** |  | [optional] 
-**Confidence** | Pointer to **string** |  | [optional] 
-**Birthday** | Pointer to **string** |  | [optional] 
-**IpAddress** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -651,106 +647,6 @@ SetMaid sets Maid field to given value.
 `func (o *MultiFieldReq) HasMaid() bool`
 
 HasMaid returns a boolean if a field has been set.
-
-### GetInfer
-
-`func (o *MultiFieldReq) GetInfer() bool`
-
-GetInfer returns the Infer field if non-nil, zero value otherwise.
-
-### GetInferOk
-
-`func (o *MultiFieldReq) GetInferOk() (*bool, bool)`
-
-GetInferOk returns a tuple with the Infer field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInfer
-
-`func (o *MultiFieldReq) SetInfer(v bool)`
-
-SetInfer sets Infer field to given value.
-
-### HasInfer
-
-`func (o *MultiFieldReq) HasInfer() bool`
-
-HasInfer returns a boolean if a field has been set.
-
-### GetConfidence
-
-`func (o *MultiFieldReq) GetConfidence() string`
-
-GetConfidence returns the Confidence field if non-nil, zero value otherwise.
-
-### GetConfidenceOk
-
-`func (o *MultiFieldReq) GetConfidenceOk() (*string, bool)`
-
-GetConfidenceOk returns a tuple with the Confidence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConfidence
-
-`func (o *MultiFieldReq) SetConfidence(v string)`
-
-SetConfidence sets Confidence field to given value.
-
-### HasConfidence
-
-`func (o *MultiFieldReq) HasConfidence() bool`
-
-HasConfidence returns a boolean if a field has been set.
-
-### GetBirthday
-
-`func (o *MultiFieldReq) GetBirthday() string`
-
-GetBirthday returns the Birthday field if non-nil, zero value otherwise.
-
-### GetBirthdayOk
-
-`func (o *MultiFieldReq) GetBirthdayOk() (*string, bool)`
-
-GetBirthdayOk returns a tuple with the Birthday field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetBirthday
-
-`func (o *MultiFieldReq) SetBirthday(v string)`
-
-SetBirthday sets Birthday field to given value.
-
-### HasBirthday
-
-`func (o *MultiFieldReq) HasBirthday() bool`
-
-HasBirthday returns a boolean if a field has been set.
-
-### GetIpAddress
-
-`func (o *MultiFieldReq) GetIpAddress() string`
-
-GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
-
-### GetIpAddressOk
-
-`func (o *MultiFieldReq) GetIpAddressOk() (*string, bool)`
-
-GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpAddress
-
-`func (o *MultiFieldReq) SetIpAddress(v string)`
-
-SetIpAddress sets IpAddress field to given value.
-
-### HasIpAddress
-
-`func (o *MultiFieldReq) HasIpAddress() bool`
-
-HasIpAddress returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

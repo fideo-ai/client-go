@@ -20,8 +20,8 @@ docs/IpAddress.md
 docs/Location.md
 docs/LocationReq.md
 docs/LocationType.md
-docs/MatchResponse.md
 docs/MultiFieldReq.md
+docs/MultiFieldReqWithOptions.md
 docs/Name.md
 docs/NameWithAlias.md
 docs/PersonNameReq.md
@@ -29,17 +29,18 @@ docs/Phone.md
 docs/Photo.md
 docs/ScoreDetails.md
 docs/SignalsAPI.md
+docs/SignalsPost200Response.md
 docs/SignalsResponseV0.md
 docs/SignalsResponseV20240424.md
 docs/SocialProfileDetails.md
 docs/SocialProfileReq.md
 docs/SocialProfileUrls.md
 docs/VerifyAPI.md
-docs/VerifySignalsPost200Response.md
+docs/VerifyResponse.md
 git_push.sh
 go.mod
 go.sum
-model__verify_signals_post_200_response.go
+model__signals_post_200_response.go
 model_alias.go
 model_demographics.go
 model_economic.go
@@ -54,8 +55,8 @@ model_ip_country.go
 model_location.go
 model_location_req.go
 model_location_type.go
-model_match_response.go
 model_multi_field_req.go
+model_multi_field_req_with_options.go
 model_name.go
 model_name_with_alias.go
 model_person_name_req.go
@@ -67,5 +68,6 @@ model_signals_response_v20240424.go
 model_social_profile_details.go
 model_social_profile_req.go
 model_social_profile_urls.go
+model_verify_response.go
 response.go
 utils.go

@@ -1,16 +1,16 @@
 # \VerifyAPI
 
-All URIs are relative to *https://api.fullcontact.com/v3*
+All URIs are relative to *https://api.fideo.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VerifyMatchPost**](VerifyAPI.md#VerifyMatchPost) | **Post** /verify.match | 
+[**VerifyPost**](VerifyAPI.md#VerifyPost) | **Post** /verify | 
 
 
 
-## VerifyMatchPost
+## VerifyPost
 
-> MatchResponse VerifyMatchPost(ctx).MultiFieldReq(multiFieldReq).Execute()
+> VerifyResponse VerifyPost(ctx).MultiFieldReq(multiFieldReq).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.VerifyAPI.VerifyMatchPost(context.Background()).MultiFieldReq(multiFieldReq).Execute()
+	resp, r, err := apiClient.VerifyAPI.VerifyPost(context.Background()).MultiFieldReq(multiFieldReq).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `VerifyAPI.VerifyMatchPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `VerifyAPI.VerifyPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `VerifyMatchPost`: MatchResponse
-	fmt.Fprintf(os.Stdout, "Response from `VerifyAPI.VerifyMatchPost`: %v\n", resp)
+	// response from `VerifyPost`: VerifyResponse
+	fmt.Fprintf(os.Stdout, "Response from `VerifyAPI.VerifyPost`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyMatchPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MatchResponse**](MatchResponse.md)
+[**VerifyResponse**](VerifyResponse.md)
 
 ### Authorization
 

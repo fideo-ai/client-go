@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -44,10 +44,6 @@ type MultiFieldReq struct {
 	Phone *string `json:"phone,omitempty"`
 	Profile *SocialProfileReq `json:"profile,omitempty"`
 	Maid *string `json:"maid,omitempty"`
-	Infer *bool `json:"infer,omitempty"`
-	Confidence *string `json:"confidence,omitempty"`
-	Birthday *string `json:"birthday,omitempty"`
-	IpAddress *string `json:"ipAddress,omitempty"`
 }
 
 // NewMultiFieldReq instantiates a new MultiFieldReq object
@@ -835,134 +831,6 @@ func (o *MultiFieldReq) SetMaid(v string) {
 	o.Maid = &v
 }
 
-// GetInfer returns the Infer field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetInfer() bool {
-	if o == nil || IsNil(o.Infer) {
-		var ret bool
-		return ret
-	}
-	return *o.Infer
-}
-
-// GetInferOk returns a tuple with the Infer field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetInferOk() (*bool, bool) {
-	if o == nil || IsNil(o.Infer) {
-		return nil, false
-	}
-	return o.Infer, true
-}
-
-// HasInfer returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasInfer() bool {
-	if o != nil && !IsNil(o.Infer) {
-		return true
-	}
-
-	return false
-}
-
-// SetInfer gets a reference to the given bool and assigns it to the Infer field.
-func (o *MultiFieldReq) SetInfer(v bool) {
-	o.Infer = &v
-}
-
-// GetConfidence returns the Confidence field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetConfidence() string {
-	if o == nil || IsNil(o.Confidence) {
-		var ret string
-		return ret
-	}
-	return *o.Confidence
-}
-
-// GetConfidenceOk returns a tuple with the Confidence field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetConfidenceOk() (*string, bool) {
-	if o == nil || IsNil(o.Confidence) {
-		return nil, false
-	}
-	return o.Confidence, true
-}
-
-// HasConfidence returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasConfidence() bool {
-	if o != nil && !IsNil(o.Confidence) {
-		return true
-	}
-
-	return false
-}
-
-// SetConfidence gets a reference to the given string and assigns it to the Confidence field.
-func (o *MultiFieldReq) SetConfidence(v string) {
-	o.Confidence = &v
-}
-
-// GetBirthday returns the Birthday field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetBirthday() string {
-	if o == nil || IsNil(o.Birthday) {
-		var ret string
-		return ret
-	}
-	return *o.Birthday
-}
-
-// GetBirthdayOk returns a tuple with the Birthday field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetBirthdayOk() (*string, bool) {
-	if o == nil || IsNil(o.Birthday) {
-		return nil, false
-	}
-	return o.Birthday, true
-}
-
-// HasBirthday returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasBirthday() bool {
-	if o != nil && !IsNil(o.Birthday) {
-		return true
-	}
-
-	return false
-}
-
-// SetBirthday gets a reference to the given string and assigns it to the Birthday field.
-func (o *MultiFieldReq) SetBirthday(v string) {
-	o.Birthday = &v
-}
-
-// GetIpAddress returns the IpAddress field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetIpAddress() string {
-	if o == nil || IsNil(o.IpAddress) {
-		var ret string
-		return ret
-	}
-	return *o.IpAddress
-}
-
-// GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetIpAddressOk() (*string, bool) {
-	if o == nil || IsNil(o.IpAddress) {
-		return nil, false
-	}
-	return o.IpAddress, true
-}
-
-// HasIpAddress returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasIpAddress() bool {
-	if o != nil && !IsNil(o.IpAddress) {
-		return true
-	}
-
-	return false
-}
-
-// SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
-func (o *MultiFieldReq) SetIpAddress(v string) {
-	o.IpAddress = &v
-}
-
 func (o MultiFieldReq) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -1044,18 +912,6 @@ func (o MultiFieldReq) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Maid) {
 		toSerialize["maid"] = o.Maid
-	}
-	if !IsNil(o.Infer) {
-		toSerialize["infer"] = o.Infer
-	}
-	if !IsNil(o.Confidence) {
-		toSerialize["confidence"] = o.Confidence
-	}
-	if !IsNil(o.Birthday) {
-		toSerialize["birthday"] = o.Birthday
-	}
-	if !IsNil(o.IpAddress) {
-		toSerialize["ipAddress"] = o.IpAddress
 	}
 	return toSerialize, nil
 }

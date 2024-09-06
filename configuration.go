@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -94,7 +94,7 @@ func NewConfiguration() *Configuration {
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
-				URL: "https://api.fullcontact.com/v3",
+				URL: "https://api.fideo.ai",
 				Description: "No description provided",
 			},
 		},

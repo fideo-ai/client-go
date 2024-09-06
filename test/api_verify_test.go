@@ -22,11 +22,11 @@ func Test_fideo_VerifyAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test VerifyAPIService VerifyMatchPost", func(t *testing.T) {
+	t.Run("Test VerifyAPIService VerifyPost", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.VerifyAPI.VerifyMatchPost(context.Background()).Execute()
+		resp, httpRes, err := apiClient.VerifyAPI.VerifyPost(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

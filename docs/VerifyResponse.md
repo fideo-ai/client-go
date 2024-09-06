@@ -1,4 +1,4 @@
-# MatchResponse
+# VerifyResponse
 
 ## Properties
 
@@ -33,670 +33,670 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewMatchResponse
+### NewVerifyResponse
 
-`func NewMatchResponse() *MatchResponse`
+`func NewVerifyResponse() *VerifyResponse`
 
-NewMatchResponse instantiates a new MatchResponse object
+NewVerifyResponse instantiates a new VerifyResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewMatchResponseWithDefaults
+### NewVerifyResponseWithDefaults
 
-`func NewMatchResponseWithDefaults() *MatchResponse`
+`func NewVerifyResponseWithDefaults() *VerifyResponse`
 
-NewMatchResponseWithDefaults instantiates a new MatchResponse object
+NewVerifyResponseWithDefaults instantiates a new VerifyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetAddressLine1
 
-`func (o *MatchResponse) GetAddressLine1() string`
+`func (o *VerifyResponse) GetAddressLine1() string`
 
 GetAddressLine1 returns the AddressLine1 field if non-nil, zero value otherwise.
 
 ### GetAddressLine1Ok
 
-`func (o *MatchResponse) GetAddressLine1Ok() (*string, bool)`
+`func (o *VerifyResponse) GetAddressLine1Ok() (*string, bool)`
 
 GetAddressLine1Ok returns a tuple with the AddressLine1 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddressLine1
 
-`func (o *MatchResponse) SetAddressLine1(v string)`
+`func (o *VerifyResponse) SetAddressLine1(v string)`
 
 SetAddressLine1 sets AddressLine1 field to given value.
 
 ### HasAddressLine1
 
-`func (o *MatchResponse) HasAddressLine1() bool`
+`func (o *VerifyResponse) HasAddressLine1() bool`
 
 HasAddressLine1 returns a boolean if a field has been set.
 
 ### GetAddressLine2
 
-`func (o *MatchResponse) GetAddressLine2() string`
+`func (o *VerifyResponse) GetAddressLine2() string`
 
 GetAddressLine2 returns the AddressLine2 field if non-nil, zero value otherwise.
 
 ### GetAddressLine2Ok
 
-`func (o *MatchResponse) GetAddressLine2Ok() (*string, bool)`
+`func (o *VerifyResponse) GetAddressLine2Ok() (*string, bool)`
 
 GetAddressLine2Ok returns a tuple with the AddressLine2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddressLine2
 
-`func (o *MatchResponse) SetAddressLine2(v string)`
+`func (o *VerifyResponse) SetAddressLine2(v string)`
 
 SetAddressLine2 sets AddressLine2 field to given value.
 
 ### HasAddressLine2
 
-`func (o *MatchResponse) HasAddressLine2() bool`
+`func (o *VerifyResponse) HasAddressLine2() bool`
 
 HasAddressLine2 returns a boolean if a field has been set.
 
 ### GetCity
 
-`func (o *MatchResponse) GetCity() string`
+`func (o *VerifyResponse) GetCity() string`
 
 GetCity returns the City field if non-nil, zero value otherwise.
 
 ### GetCityOk
 
-`func (o *MatchResponse) GetCityOk() (*string, bool)`
+`func (o *VerifyResponse) GetCityOk() (*string, bool)`
 
 GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCity
 
-`func (o *MatchResponse) SetCity(v string)`
+`func (o *VerifyResponse) SetCity(v string)`
 
 SetCity sets City field to given value.
 
 ### HasCity
 
-`func (o *MatchResponse) HasCity() bool`
+`func (o *VerifyResponse) HasCity() bool`
 
 HasCity returns a boolean if a field has been set.
 
 ### GetRegion
 
-`func (o *MatchResponse) GetRegion() string`
+`func (o *VerifyResponse) GetRegion() string`
 
 GetRegion returns the Region field if non-nil, zero value otherwise.
 
 ### GetRegionOk
 
-`func (o *MatchResponse) GetRegionOk() (*string, bool)`
+`func (o *VerifyResponse) GetRegionOk() (*string, bool)`
 
 GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegion
 
-`func (o *MatchResponse) SetRegion(v string)`
+`func (o *VerifyResponse) SetRegion(v string)`
 
 SetRegion sets Region field to given value.
 
 ### HasRegion
 
-`func (o *MatchResponse) HasRegion() bool`
+`func (o *VerifyResponse) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
 
 ### GetRegionCode
 
-`func (o *MatchResponse) GetRegionCode() string`
+`func (o *VerifyResponse) GetRegionCode() string`
 
 GetRegionCode returns the RegionCode field if non-nil, zero value otherwise.
 
 ### GetRegionCodeOk
 
-`func (o *MatchResponse) GetRegionCodeOk() (*string, bool)`
+`func (o *VerifyResponse) GetRegionCodeOk() (*string, bool)`
 
 GetRegionCodeOk returns a tuple with the RegionCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegionCode
 
-`func (o *MatchResponse) SetRegionCode(v string)`
+`func (o *VerifyResponse) SetRegionCode(v string)`
 
 SetRegionCode sets RegionCode field to given value.
 
 ### HasRegionCode
 
-`func (o *MatchResponse) HasRegionCode() bool`
+`func (o *VerifyResponse) HasRegionCode() bool`
 
 HasRegionCode returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *MatchResponse) GetCountry() string`
+`func (o *VerifyResponse) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *MatchResponse) GetCountryOk() (*string, bool)`
+`func (o *VerifyResponse) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *MatchResponse) SetCountry(v string)`
+`func (o *VerifyResponse) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *MatchResponse) HasCountry() bool`
+`func (o *VerifyResponse) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetContinent
 
-`func (o *MatchResponse) GetContinent() string`
+`func (o *VerifyResponse) GetContinent() string`
 
 GetContinent returns the Continent field if non-nil, zero value otherwise.
 
 ### GetContinentOk
 
-`func (o *MatchResponse) GetContinentOk() (*string, bool)`
+`func (o *VerifyResponse) GetContinentOk() (*string, bool)`
 
 GetContinentOk returns a tuple with the Continent field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContinent
 
-`func (o *MatchResponse) SetContinent(v string)`
+`func (o *VerifyResponse) SetContinent(v string)`
 
 SetContinent sets Continent field to given value.
 
 ### HasContinent
 
-`func (o *MatchResponse) HasContinent() bool`
+`func (o *VerifyResponse) HasContinent() bool`
 
 HasContinent returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *MatchResponse) GetPostalCode() string`
+`func (o *VerifyResponse) GetPostalCode() string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *MatchResponse) GetPostalCodeOk() (*string, bool)`
+`func (o *VerifyResponse) GetPostalCodeOk() (*string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *MatchResponse) SetPostalCode(v string)`
+`func (o *VerifyResponse) SetPostalCode(v string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 ### HasPostalCode
 
-`func (o *MatchResponse) HasPostalCode() bool`
+`func (o *VerifyResponse) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
 ### GetFamilyName
 
-`func (o *MatchResponse) GetFamilyName() string`
+`func (o *VerifyResponse) GetFamilyName() string`
 
 GetFamilyName returns the FamilyName field if non-nil, zero value otherwise.
 
 ### GetFamilyNameOk
 
-`func (o *MatchResponse) GetFamilyNameOk() (*string, bool)`
+`func (o *VerifyResponse) GetFamilyNameOk() (*string, bool)`
 
 GetFamilyNameOk returns a tuple with the FamilyName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFamilyName
 
-`func (o *MatchResponse) SetFamilyName(v string)`
+`func (o *VerifyResponse) SetFamilyName(v string)`
 
 SetFamilyName sets FamilyName field to given value.
 
 ### HasFamilyName
 
-`func (o *MatchResponse) HasFamilyName() bool`
+`func (o *VerifyResponse) HasFamilyName() bool`
 
 HasFamilyName returns a boolean if a field has been set.
 
 ### GetGivenName
 
-`func (o *MatchResponse) GetGivenName() string`
+`func (o *VerifyResponse) GetGivenName() string`
 
 GetGivenName returns the GivenName field if non-nil, zero value otherwise.
 
 ### GetGivenNameOk
 
-`func (o *MatchResponse) GetGivenNameOk() (*string, bool)`
+`func (o *VerifyResponse) GetGivenNameOk() (*string, bool)`
 
 GetGivenNameOk returns a tuple with the GivenName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGivenName
 
-`func (o *MatchResponse) SetGivenName(v string)`
+`func (o *VerifyResponse) SetGivenName(v string)`
 
 SetGivenName sets GivenName field to given value.
 
 ### HasGivenName
 
-`func (o *MatchResponse) HasGivenName() bool`
+`func (o *VerifyResponse) HasGivenName() bool`
 
 HasGivenName returns a boolean if a field has been set.
 
 ### GetFullName
 
-`func (o *MatchResponse) GetFullName() string`
+`func (o *VerifyResponse) GetFullName() string`
 
 GetFullName returns the FullName field if non-nil, zero value otherwise.
 
 ### GetFullNameOk
 
-`func (o *MatchResponse) GetFullNameOk() (*string, bool)`
+`func (o *VerifyResponse) GetFullNameOk() (*string, bool)`
 
 GetFullNameOk returns a tuple with the FullName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFullName
 
-`func (o *MatchResponse) SetFullName(v string)`
+`func (o *VerifyResponse) SetFullName(v string)`
 
 SetFullName sets FullName field to given value.
 
 ### HasFullName
 
-`func (o *MatchResponse) HasFullName() bool`
+`func (o *VerifyResponse) HasFullName() bool`
 
 HasFullName returns a boolean if a field has been set.
 
 ### GetPhone
 
-`func (o *MatchResponse) GetPhone() string`
+`func (o *VerifyResponse) GetPhone() string`
 
 GetPhone returns the Phone field if non-nil, zero value otherwise.
 
 ### GetPhoneOk
 
-`func (o *MatchResponse) GetPhoneOk() (*string, bool)`
+`func (o *VerifyResponse) GetPhoneOk() (*string, bool)`
 
 GetPhoneOk returns a tuple with the Phone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPhone
 
-`func (o *MatchResponse) SetPhone(v string)`
+`func (o *VerifyResponse) SetPhone(v string)`
 
 SetPhone sets Phone field to given value.
 
 ### HasPhone
 
-`func (o *MatchResponse) HasPhone() bool`
+`func (o *VerifyResponse) HasPhone() bool`
 
 HasPhone returns a boolean if a field has been set.
 
 ### GetEmail
 
-`func (o *MatchResponse) GetEmail() string`
+`func (o *VerifyResponse) GetEmail() string`
 
 GetEmail returns the Email field if non-nil, zero value otherwise.
 
 ### GetEmailOk
 
-`func (o *MatchResponse) GetEmailOk() (*string, bool)`
+`func (o *VerifyResponse) GetEmailOk() (*string, bool)`
 
 GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmail
 
-`func (o *MatchResponse) SetEmail(v string)`
+`func (o *VerifyResponse) SetEmail(v string)`
 
 SetEmail sets Email field to given value.
 
 ### HasEmail
 
-`func (o *MatchResponse) HasEmail() bool`
+`func (o *VerifyResponse) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
 
 ### GetMaid
 
-`func (o *MatchResponse) GetMaid() string`
+`func (o *VerifyResponse) GetMaid() string`
 
 GetMaid returns the Maid field if non-nil, zero value otherwise.
 
 ### GetMaidOk
 
-`func (o *MatchResponse) GetMaidOk() (*string, bool)`
+`func (o *VerifyResponse) GetMaidOk() (*string, bool)`
 
 GetMaidOk returns a tuple with the Maid field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMaid
 
-`func (o *MatchResponse) SetMaid(v string)`
+`func (o *VerifyResponse) SetMaid(v string)`
 
 SetMaid sets Maid field to given value.
 
 ### HasMaid
 
-`func (o *MatchResponse) HasMaid() bool`
+`func (o *VerifyResponse) HasMaid() bool`
 
 HasMaid returns a boolean if a field has been set.
 
 ### GetSocial
 
-`func (o *MatchResponse) GetSocial() string`
+`func (o *VerifyResponse) GetSocial() string`
 
 GetSocial returns the Social field if non-nil, zero value otherwise.
 
 ### GetSocialOk
 
-`func (o *MatchResponse) GetSocialOk() (*string, bool)`
+`func (o *VerifyResponse) GetSocialOk() (*string, bool)`
 
 GetSocialOk returns a tuple with the Social field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSocial
 
-`func (o *MatchResponse) SetSocial(v string)`
+`func (o *VerifyResponse) SetSocial(v string)`
 
 SetSocial sets Social field to given value.
 
 ### HasSocial
 
-`func (o *MatchResponse) HasSocial() bool`
+`func (o *VerifyResponse) HasSocial() bool`
 
 HasSocial returns a boolean if a field has been set.
 
 ### GetNonId
 
-`func (o *MatchResponse) GetNonId() string`
+`func (o *VerifyResponse) GetNonId() string`
 
 GetNonId returns the NonId field if non-nil, zero value otherwise.
 
 ### GetNonIdOk
 
-`func (o *MatchResponse) GetNonIdOk() (*string, bool)`
+`func (o *VerifyResponse) GetNonIdOk() (*string, bool)`
 
 GetNonIdOk returns a tuple with the NonId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNonId
 
-`func (o *MatchResponse) SetNonId(v string)`
+`func (o *VerifyResponse) SetNonId(v string)`
 
 SetNonId sets NonId field to given value.
 
 ### HasNonId
 
-`func (o *MatchResponse) HasNonId() bool`
+`func (o *VerifyResponse) HasNonId() bool`
 
 HasNonId returns a boolean if a field has been set.
 
 ### GetPanoramaId
 
-`func (o *MatchResponse) GetPanoramaId() string`
+`func (o *VerifyResponse) GetPanoramaId() string`
 
 GetPanoramaId returns the PanoramaId field if non-nil, zero value otherwise.
 
 ### GetPanoramaIdOk
 
-`func (o *MatchResponse) GetPanoramaIdOk() (*string, bool)`
+`func (o *VerifyResponse) GetPanoramaIdOk() (*string, bool)`
 
 GetPanoramaIdOk returns a tuple with the PanoramaId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPanoramaId
 
-`func (o *MatchResponse) SetPanoramaId(v string)`
+`func (o *VerifyResponse) SetPanoramaId(v string)`
 
 SetPanoramaId sets PanoramaId field to given value.
 
 ### HasPanoramaId
 
-`func (o *MatchResponse) HasPanoramaId() bool`
+`func (o *VerifyResponse) HasPanoramaId() bool`
 
 HasPanoramaId returns a boolean if a field has been set.
 
 ### GetIpAddress
 
-`func (o *MatchResponse) GetIpAddress() string`
+`func (o *VerifyResponse) GetIpAddress() string`
 
 GetIpAddress returns the IpAddress field if non-nil, zero value otherwise.
 
 ### GetIpAddressOk
 
-`func (o *MatchResponse) GetIpAddressOk() (*string, bool)`
+`func (o *VerifyResponse) GetIpAddressOk() (*string, bool)`
 
 GetIpAddressOk returns a tuple with the IpAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIpAddress
 
-`func (o *MatchResponse) SetIpAddress(v string)`
+`func (o *VerifyResponse) SetIpAddress(v string)`
 
 SetIpAddress sets IpAddress field to given value.
 
 ### HasIpAddress
 
-`func (o *MatchResponse) HasIpAddress() bool`
+`func (o *VerifyResponse) HasIpAddress() bool`
 
 HasIpAddress returns a boolean if a field has been set.
 
 ### GetBirthday
 
-`func (o *MatchResponse) GetBirthday() string`
+`func (o *VerifyResponse) GetBirthday() string`
 
 GetBirthday returns the Birthday field if non-nil, zero value otherwise.
 
 ### GetBirthdayOk
 
-`func (o *MatchResponse) GetBirthdayOk() (*string, bool)`
+`func (o *VerifyResponse) GetBirthdayOk() (*string, bool)`
 
 GetBirthdayOk returns a tuple with the Birthday field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBirthday
 
-`func (o *MatchResponse) SetBirthday(v string)`
+`func (o *VerifyResponse) SetBirthday(v string)`
 
 SetBirthday sets Birthday field to given value.
 
 ### HasBirthday
 
-`func (o *MatchResponse) HasBirthday() bool`
+`func (o *VerifyResponse) HasBirthday() bool`
 
 HasBirthday returns a boolean if a field has been set.
 
 ### GetTitle
 
-`func (o *MatchResponse) GetTitle() string`
+`func (o *VerifyResponse) GetTitle() string`
 
 GetTitle returns the Title field if non-nil, zero value otherwise.
 
 ### GetTitleOk
 
-`func (o *MatchResponse) GetTitleOk() (*string, bool)`
+`func (o *VerifyResponse) GetTitleOk() (*string, bool)`
 
 GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTitle
 
-`func (o *MatchResponse) SetTitle(v string)`
+`func (o *VerifyResponse) SetTitle(v string)`
 
 SetTitle sets Title field to given value.
 
 ### HasTitle
 
-`func (o *MatchResponse) HasTitle() bool`
+`func (o *VerifyResponse) HasTitle() bool`
 
 HasTitle returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *MatchResponse) GetOrganization() string`
+`func (o *VerifyResponse) GetOrganization() string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *MatchResponse) GetOrganizationOk() (*string, bool)`
+`func (o *VerifyResponse) GetOrganizationOk() (*string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *MatchResponse) SetOrganization(v string)`
+`func (o *VerifyResponse) SetOrganization(v string)`
 
 SetOrganization sets Organization field to given value.
 
 ### HasOrganization
 
-`func (o *MatchResponse) HasOrganization() bool`
+`func (o *VerifyResponse) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
 ### GetRisk
 
-`func (o *MatchResponse) GetRisk() float64`
+`func (o *VerifyResponse) GetRisk() float64`
 
 GetRisk returns the Risk field if non-nil, zero value otherwise.
 
 ### GetRiskOk
 
-`func (o *MatchResponse) GetRiskOk() (*float64, bool)`
+`func (o *VerifyResponse) GetRiskOk() (*float64, bool)`
 
 GetRiskOk returns a tuple with the Risk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRisk
 
-`func (o *MatchResponse) SetRisk(v float64)`
+`func (o *VerifyResponse) SetRisk(v float64)`
 
 SetRisk sets Risk field to given value.
 
 ### HasRisk
 
-`func (o *MatchResponse) HasRisk() bool`
+`func (o *VerifyResponse) HasRisk() bool`
 
 HasRisk returns a boolean if a field has been set.
 
 ### GetEvidence
 
-`func (o *MatchResponse) GetEvidence() Evidence`
+`func (o *VerifyResponse) GetEvidence() Evidence`
 
 GetEvidence returns the Evidence field if non-nil, zero value otherwise.
 
 ### GetEvidenceOk
 
-`func (o *MatchResponse) GetEvidenceOk() (*Evidence, bool)`
+`func (o *VerifyResponse) GetEvidenceOk() (*Evidence, bool)`
 
 GetEvidenceOk returns a tuple with the Evidence field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvidence
 
-`func (o *MatchResponse) SetEvidence(v Evidence)`
+`func (o *VerifyResponse) SetEvidence(v Evidence)`
 
 SetEvidence sets Evidence field to given value.
 
 ### HasEvidence
 
-`func (o *MatchResponse) HasEvidence() bool`
+`func (o *VerifyResponse) HasEvidence() bool`
 
 HasEvidence returns a boolean if a field has been set.
 
 ### GetRiskV2
 
-`func (o *MatchResponse) GetRiskV2() float64`
+`func (o *VerifyResponse) GetRiskV2() float64`
 
 GetRiskV2 returns the RiskV2 field if non-nil, zero value otherwise.
 
 ### GetRiskV2Ok
 
-`func (o *MatchResponse) GetRiskV2Ok() (*float64, bool)`
+`func (o *VerifyResponse) GetRiskV2Ok() (*float64, bool)`
 
 GetRiskV2Ok returns a tuple with the RiskV2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskV2
 
-`func (o *MatchResponse) SetRiskV2(v float64)`
+`func (o *VerifyResponse) SetRiskV2(v float64)`
 
 SetRiskV2 sets RiskV2 field to given value.
 
 ### HasRiskV2
 
-`func (o *MatchResponse) HasRiskV2() bool`
+`func (o *VerifyResponse) HasRiskV2() bool`
 
 HasRiskV2 returns a boolean if a field has been set.
 
 ### GetRiskV3
 
-`func (o *MatchResponse) GetRiskV3() float64`
+`func (o *VerifyResponse) GetRiskV3() float64`
 
 GetRiskV3 returns the RiskV3 field if non-nil, zero value otherwise.
 
 ### GetRiskV3Ok
 
-`func (o *MatchResponse) GetRiskV3Ok() (*float64, bool)`
+`func (o *VerifyResponse) GetRiskV3Ok() (*float64, bool)`
 
 GetRiskV3Ok returns a tuple with the RiskV3 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRiskV3
 
-`func (o *MatchResponse) SetRiskV3(v float64)`
+`func (o *VerifyResponse) SetRiskV3(v float64)`
 
 SetRiskV3 sets RiskV3 field to given value.
 
 ### HasRiskV3
 
-`func (o *MatchResponse) HasRiskV3() bool`
+`func (o *VerifyResponse) HasRiskV3() bool`
 
 HasRiskV3 returns a boolean if a field has been set.
 
 ### GetScoreDetails
 
-`func (o *MatchResponse) GetScoreDetails() []ScoreDetails`
+`func (o *VerifyResponse) GetScoreDetails() []ScoreDetails`
 
 GetScoreDetails returns the ScoreDetails field if non-nil, zero value otherwise.
 
 ### GetScoreDetailsOk
 
-`func (o *MatchResponse) GetScoreDetailsOk() (*[]ScoreDetails, bool)`
+`func (o *VerifyResponse) GetScoreDetailsOk() (*[]ScoreDetails, bool)`
 
 GetScoreDetailsOk returns a tuple with the ScoreDetails field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetScoreDetails
 
-`func (o *MatchResponse) SetScoreDetails(v []ScoreDetails)`
+`func (o *VerifyResponse) SetScoreDetails(v []ScoreDetails)`
 
 SetScoreDetails sets ScoreDetails field to given value.
 
 ### HasScoreDetails
 
-`func (o *MatchResponse) HasScoreDetails() bool`
+`func (o *VerifyResponse) HasScoreDetails() bool`
 
 HasScoreDetails returns a boolean if a field has been set.
 

@@ -1,16 +1,16 @@
 # \SignalsAPI
 
-All URIs are relative to *https://api.fullcontact.com/v3*
+All URIs are relative to *https://api.fideo.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VerifySignalsPost**](SignalsAPI.md#VerifySignalsPost) | **Post** /verify.signals | 
+[**SignalsPost**](SignalsAPI.md#SignalsPost) | **Post** /signals | 
 
 
 
-## VerifySignalsPost
+## SignalsPost
 
-> VerifySignalsPost200Response VerifySignalsPost(ctx).V(v).MultiFieldReq(multiFieldReq).Execute()
+> SignalsPost200Response SignalsPost(ctx).V(v).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 
 
 
@@ -28,17 +28,17 @@ import (
 
 func main() {
 	v := "v_example" // string |  (optional)
-	multiFieldReq := *openapiclient.NewMultiFieldReq() // MultiFieldReq |  (optional)
+	multiFieldReqWithOptions := *openapiclient.NewMultiFieldReqWithOptions() // MultiFieldReqWithOptions |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SignalsAPI.VerifySignalsPost(context.Background()).V(v).MultiFieldReq(multiFieldReq).Execute()
+	resp, r, err := apiClient.SignalsAPI.SignalsPost(context.Background()).V(v).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SignalsAPI.VerifySignalsPost``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SignalsAPI.SignalsPost``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `VerifySignalsPost`: VerifySignalsPost200Response
-	fmt.Fprintf(os.Stdout, "Response from `SignalsAPI.VerifySignalsPost`: %v\n", resp)
+	// response from `SignalsPost`: SignalsPost200Response
+	fmt.Fprintf(os.Stdout, "Response from `SignalsAPI.SignalsPost`: %v\n", resp)
 }
 ```
 
@@ -48,17 +48,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifySignalsPostRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiSignalsPostRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **v** | **string** |  | 
- **multiFieldReq** | [**MultiFieldReq**](MultiFieldReq.md) |  | 
+ **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md) |  | 
 
 ### Return type
 
-[**VerifySignalsPost200Response**](VerifySignalsPost200Response.md)
+[**SignalsPost200Response**](SignalsPost200Response.md)
 
 ### Authorization
 

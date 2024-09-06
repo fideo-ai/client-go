@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -23,50 +23,50 @@ import (
 // VerifyAPIService VerifyAPI service
 type VerifyAPIService service
 
-type ApiVerifyMatchPostRequest struct {
+type ApiVerifyPostRequest struct {
 	ctx context.Context
 	ApiService *VerifyAPIService
 	multiFieldReq *MultiFieldReq
 }
 
-func (r ApiVerifyMatchPostRequest) MultiFieldReq(multiFieldReq MultiFieldReq) ApiVerifyMatchPostRequest {
+func (r ApiVerifyPostRequest) MultiFieldReq(multiFieldReq MultiFieldReq) ApiVerifyPostRequest {
 	r.multiFieldReq = &multiFieldReq
 	return r
 }
 
-func (r ApiVerifyMatchPostRequest) Execute() (*MatchResponse, *http.Response, error) {
-	return r.ApiService.VerifyMatchPostExecute(r)
+func (r ApiVerifyPostRequest) Execute() (*VerifyResponse, *http.Response, error) {
+	return r.ApiService.VerifyPostExecute(r)
 }
 
 /*
-VerifyMatchPost Method for VerifyMatchPost
+VerifyPost Method for VerifyPost
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyMatchPostRequest
+ @return ApiVerifyPostRequest
 */
-func (a *VerifyAPIService) VerifyMatchPost(ctx context.Context) ApiVerifyMatchPostRequest {
-	return ApiVerifyMatchPostRequest{
+func (a *VerifyAPIService) VerifyPost(ctx context.Context) ApiVerifyPostRequest {
+	return ApiVerifyPostRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return MatchResponse
-func (a *VerifyAPIService) VerifyMatchPostExecute(r ApiVerifyMatchPostRequest) (*MatchResponse, *http.Response, error) {
+//  @return VerifyResponse
+func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *MatchResponse
+		localVarReturnValue  *VerifyResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VerifyAPIService.VerifyMatchPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VerifyAPIService.VerifyPost")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/verify.match"
+	localVarPath := localBasePath + "/verify"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

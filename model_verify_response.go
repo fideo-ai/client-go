@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -15,11 +15,11 @@ import (
 	"encoding/json"
 )
 
-// checks if the MatchResponse type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MatchResponse{}
+// checks if the VerifyResponse type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VerifyResponse{}
 
-// MatchResponse struct for MatchResponse
-type MatchResponse struct {
+// VerifyResponse struct for VerifyResponse
+type VerifyResponse struct {
 	AddressLine1 *string `json:"addressLine1,omitempty"`
 	AddressLine2 *string `json:"addressLine2,omitempty"`
 	City *string `json:"city,omitempty"`
@@ -48,25 +48,25 @@ type MatchResponse struct {
 	ScoreDetails []ScoreDetails `json:"scoreDetails,omitempty"`
 }
 
-// NewMatchResponse instantiates a new MatchResponse object
+// NewVerifyResponse instantiates a new VerifyResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMatchResponse() *MatchResponse {
-	this := MatchResponse{}
+func NewVerifyResponse() *VerifyResponse {
+	this := VerifyResponse{}
 	return &this
 }
 
-// NewMatchResponseWithDefaults instantiates a new MatchResponse object
+// NewVerifyResponseWithDefaults instantiates a new VerifyResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewMatchResponseWithDefaults() *MatchResponse {
-	this := MatchResponse{}
+func NewVerifyResponseWithDefaults() *VerifyResponse {
+	this := VerifyResponse{}
 	return &this
 }
 
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
-func (o *MatchResponse) GetAddressLine1() string {
+func (o *VerifyResponse) GetAddressLine1() string {
 	if o == nil || IsNil(o.AddressLine1) {
 		var ret string
 		return ret
@@ -76,7 +76,7 @@ func (o *MatchResponse) GetAddressLine1() string {
 
 // GetAddressLine1Ok returns a tuple with the AddressLine1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetAddressLine1Ok() (*string, bool) {
+func (o *VerifyResponse) GetAddressLine1Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine1) {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *MatchResponse) GetAddressLine1Ok() (*string, bool) {
 }
 
 // HasAddressLine1 returns a boolean if a field has been set.
-func (o *MatchResponse) HasAddressLine1() bool {
+func (o *VerifyResponse) HasAddressLine1() bool {
 	if o != nil && !IsNil(o.AddressLine1) {
 		return true
 	}
@@ -93,12 +93,12 @@ func (o *MatchResponse) HasAddressLine1() bool {
 }
 
 // SetAddressLine1 gets a reference to the given string and assigns it to the AddressLine1 field.
-func (o *MatchResponse) SetAddressLine1(v string) {
+func (o *VerifyResponse) SetAddressLine1(v string) {
 	o.AddressLine1 = &v
 }
 
 // GetAddressLine2 returns the AddressLine2 field value if set, zero value otherwise.
-func (o *MatchResponse) GetAddressLine2() string {
+func (o *VerifyResponse) GetAddressLine2() string {
 	if o == nil || IsNil(o.AddressLine2) {
 		var ret string
 		return ret
@@ -108,7 +108,7 @@ func (o *MatchResponse) GetAddressLine2() string {
 
 // GetAddressLine2Ok returns a tuple with the AddressLine2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetAddressLine2Ok() (*string, bool) {
+func (o *VerifyResponse) GetAddressLine2Ok() (*string, bool) {
 	if o == nil || IsNil(o.AddressLine2) {
 		return nil, false
 	}
@@ -116,7 +116,7 @@ func (o *MatchResponse) GetAddressLine2Ok() (*string, bool) {
 }
 
 // HasAddressLine2 returns a boolean if a field has been set.
-func (o *MatchResponse) HasAddressLine2() bool {
+func (o *VerifyResponse) HasAddressLine2() bool {
 	if o != nil && !IsNil(o.AddressLine2) {
 		return true
 	}
@@ -125,12 +125,12 @@ func (o *MatchResponse) HasAddressLine2() bool {
 }
 
 // SetAddressLine2 gets a reference to the given string and assigns it to the AddressLine2 field.
-func (o *MatchResponse) SetAddressLine2(v string) {
+func (o *VerifyResponse) SetAddressLine2(v string) {
 	o.AddressLine2 = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *MatchResponse) GetCity() string {
+func (o *VerifyResponse) GetCity() string {
 	if o == nil || IsNil(o.City) {
 		var ret string
 		return ret
@@ -140,7 +140,7 @@ func (o *MatchResponse) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetCityOk() (*string, bool) {
+func (o *VerifyResponse) GetCityOk() (*string, bool) {
 	if o == nil || IsNil(o.City) {
 		return nil, false
 	}
@@ -148,7 +148,7 @@ func (o *MatchResponse) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *MatchResponse) HasCity() bool {
+func (o *VerifyResponse) HasCity() bool {
 	if o != nil && !IsNil(o.City) {
 		return true
 	}
@@ -157,12 +157,12 @@ func (o *MatchResponse) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *MatchResponse) SetCity(v string) {
+func (o *VerifyResponse) SetCity(v string) {
 	o.City = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
-func (o *MatchResponse) GetRegion() string {
+func (o *VerifyResponse) GetRegion() string {
 	if o == nil || IsNil(o.Region) {
 		var ret string
 		return ret
@@ -172,7 +172,7 @@ func (o *MatchResponse) GetRegion() string {
 
 // GetRegionOk returns a tuple with the Region field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetRegionOk() (*string, bool) {
+func (o *VerifyResponse) GetRegionOk() (*string, bool) {
 	if o == nil || IsNil(o.Region) {
 		return nil, false
 	}
@@ -180,7 +180,7 @@ func (o *MatchResponse) GetRegionOk() (*string, bool) {
 }
 
 // HasRegion returns a boolean if a field has been set.
-func (o *MatchResponse) HasRegion() bool {
+func (o *VerifyResponse) HasRegion() bool {
 	if o != nil && !IsNil(o.Region) {
 		return true
 	}
@@ -189,12 +189,12 @@ func (o *MatchResponse) HasRegion() bool {
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
-func (o *MatchResponse) SetRegion(v string) {
+func (o *VerifyResponse) SetRegion(v string) {
 	o.Region = &v
 }
 
 // GetRegionCode returns the RegionCode field value if set, zero value otherwise.
-func (o *MatchResponse) GetRegionCode() string {
+func (o *VerifyResponse) GetRegionCode() string {
 	if o == nil || IsNil(o.RegionCode) {
 		var ret string
 		return ret
@@ -204,7 +204,7 @@ func (o *MatchResponse) GetRegionCode() string {
 
 // GetRegionCodeOk returns a tuple with the RegionCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetRegionCodeOk() (*string, bool) {
+func (o *VerifyResponse) GetRegionCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.RegionCode) {
 		return nil, false
 	}
@@ -212,7 +212,7 @@ func (o *MatchResponse) GetRegionCodeOk() (*string, bool) {
 }
 
 // HasRegionCode returns a boolean if a field has been set.
-func (o *MatchResponse) HasRegionCode() bool {
+func (o *VerifyResponse) HasRegionCode() bool {
 	if o != nil && !IsNil(o.RegionCode) {
 		return true
 	}
@@ -221,12 +221,12 @@ func (o *MatchResponse) HasRegionCode() bool {
 }
 
 // SetRegionCode gets a reference to the given string and assigns it to the RegionCode field.
-func (o *MatchResponse) SetRegionCode(v string) {
+func (o *VerifyResponse) SetRegionCode(v string) {
 	o.RegionCode = &v
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
-func (o *MatchResponse) GetCountry() string {
+func (o *VerifyResponse) GetCountry() string {
 	if o == nil || IsNil(o.Country) {
 		var ret string
 		return ret
@@ -236,7 +236,7 @@ func (o *MatchResponse) GetCountry() string {
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetCountryOk() (*string, bool) {
+func (o *VerifyResponse) GetCountryOk() (*string, bool) {
 	if o == nil || IsNil(o.Country) {
 		return nil, false
 	}
@@ -244,7 +244,7 @@ func (o *MatchResponse) GetCountryOk() (*string, bool) {
 }
 
 // HasCountry returns a boolean if a field has been set.
-func (o *MatchResponse) HasCountry() bool {
+func (o *VerifyResponse) HasCountry() bool {
 	if o != nil && !IsNil(o.Country) {
 		return true
 	}
@@ -253,12 +253,12 @@ func (o *MatchResponse) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *MatchResponse) SetCountry(v string) {
+func (o *VerifyResponse) SetCountry(v string) {
 	o.Country = &v
 }
 
 // GetContinent returns the Continent field value if set, zero value otherwise.
-func (o *MatchResponse) GetContinent() string {
+func (o *VerifyResponse) GetContinent() string {
 	if o == nil || IsNil(o.Continent) {
 		var ret string
 		return ret
@@ -268,7 +268,7 @@ func (o *MatchResponse) GetContinent() string {
 
 // GetContinentOk returns a tuple with the Continent field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetContinentOk() (*string, bool) {
+func (o *VerifyResponse) GetContinentOk() (*string, bool) {
 	if o == nil || IsNil(o.Continent) {
 		return nil, false
 	}
@@ -276,7 +276,7 @@ func (o *MatchResponse) GetContinentOk() (*string, bool) {
 }
 
 // HasContinent returns a boolean if a field has been set.
-func (o *MatchResponse) HasContinent() bool {
+func (o *VerifyResponse) HasContinent() bool {
 	if o != nil && !IsNil(o.Continent) {
 		return true
 	}
@@ -285,12 +285,12 @@ func (o *MatchResponse) HasContinent() bool {
 }
 
 // SetContinent gets a reference to the given string and assigns it to the Continent field.
-func (o *MatchResponse) SetContinent(v string) {
+func (o *VerifyResponse) SetContinent(v string) {
 	o.Continent = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *MatchResponse) GetPostalCode() string {
+func (o *VerifyResponse) GetPostalCode() string {
 	if o == nil || IsNil(o.PostalCode) {
 		var ret string
 		return ret
@@ -300,7 +300,7 @@ func (o *MatchResponse) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetPostalCodeOk() (*string, bool) {
+func (o *VerifyResponse) GetPostalCodeOk() (*string, bool) {
 	if o == nil || IsNil(o.PostalCode) {
 		return nil, false
 	}
@@ -308,7 +308,7 @@ func (o *MatchResponse) GetPostalCodeOk() (*string, bool) {
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *MatchResponse) HasPostalCode() bool {
+func (o *VerifyResponse) HasPostalCode() bool {
 	if o != nil && !IsNil(o.PostalCode) {
 		return true
 	}
@@ -317,12 +317,12 @@ func (o *MatchResponse) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *MatchResponse) SetPostalCode(v string) {
+func (o *VerifyResponse) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetFamilyName returns the FamilyName field value if set, zero value otherwise.
-func (o *MatchResponse) GetFamilyName() string {
+func (o *VerifyResponse) GetFamilyName() string {
 	if o == nil || IsNil(o.FamilyName) {
 		var ret string
 		return ret
@@ -332,7 +332,7 @@ func (o *MatchResponse) GetFamilyName() string {
 
 // GetFamilyNameOk returns a tuple with the FamilyName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetFamilyNameOk() (*string, bool) {
+func (o *VerifyResponse) GetFamilyNameOk() (*string, bool) {
 	if o == nil || IsNil(o.FamilyName) {
 		return nil, false
 	}
@@ -340,7 +340,7 @@ func (o *MatchResponse) GetFamilyNameOk() (*string, bool) {
 }
 
 // HasFamilyName returns a boolean if a field has been set.
-func (o *MatchResponse) HasFamilyName() bool {
+func (o *VerifyResponse) HasFamilyName() bool {
 	if o != nil && !IsNil(o.FamilyName) {
 		return true
 	}
@@ -349,12 +349,12 @@ func (o *MatchResponse) HasFamilyName() bool {
 }
 
 // SetFamilyName gets a reference to the given string and assigns it to the FamilyName field.
-func (o *MatchResponse) SetFamilyName(v string) {
+func (o *VerifyResponse) SetFamilyName(v string) {
 	o.FamilyName = &v
 }
 
 // GetGivenName returns the GivenName field value if set, zero value otherwise.
-func (o *MatchResponse) GetGivenName() string {
+func (o *VerifyResponse) GetGivenName() string {
 	if o == nil || IsNil(o.GivenName) {
 		var ret string
 		return ret
@@ -364,7 +364,7 @@ func (o *MatchResponse) GetGivenName() string {
 
 // GetGivenNameOk returns a tuple with the GivenName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetGivenNameOk() (*string, bool) {
+func (o *VerifyResponse) GetGivenNameOk() (*string, bool) {
 	if o == nil || IsNil(o.GivenName) {
 		return nil, false
 	}
@@ -372,7 +372,7 @@ func (o *MatchResponse) GetGivenNameOk() (*string, bool) {
 }
 
 // HasGivenName returns a boolean if a field has been set.
-func (o *MatchResponse) HasGivenName() bool {
+func (o *VerifyResponse) HasGivenName() bool {
 	if o != nil && !IsNil(o.GivenName) {
 		return true
 	}
@@ -381,12 +381,12 @@ func (o *MatchResponse) HasGivenName() bool {
 }
 
 // SetGivenName gets a reference to the given string and assigns it to the GivenName field.
-func (o *MatchResponse) SetGivenName(v string) {
+func (o *VerifyResponse) SetGivenName(v string) {
 	o.GivenName = &v
 }
 
 // GetFullName returns the FullName field value if set, zero value otherwise.
-func (o *MatchResponse) GetFullName() string {
+func (o *VerifyResponse) GetFullName() string {
 	if o == nil || IsNil(o.FullName) {
 		var ret string
 		return ret
@@ -396,7 +396,7 @@ func (o *MatchResponse) GetFullName() string {
 
 // GetFullNameOk returns a tuple with the FullName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetFullNameOk() (*string, bool) {
+func (o *VerifyResponse) GetFullNameOk() (*string, bool) {
 	if o == nil || IsNil(o.FullName) {
 		return nil, false
 	}
@@ -404,7 +404,7 @@ func (o *MatchResponse) GetFullNameOk() (*string, bool) {
 }
 
 // HasFullName returns a boolean if a field has been set.
-func (o *MatchResponse) HasFullName() bool {
+func (o *VerifyResponse) HasFullName() bool {
 	if o != nil && !IsNil(o.FullName) {
 		return true
 	}
@@ -413,12 +413,12 @@ func (o *MatchResponse) HasFullName() bool {
 }
 
 // SetFullName gets a reference to the given string and assigns it to the FullName field.
-func (o *MatchResponse) SetFullName(v string) {
+func (o *VerifyResponse) SetFullName(v string) {
 	o.FullName = &v
 }
 
 // GetPhone returns the Phone field value if set, zero value otherwise.
-func (o *MatchResponse) GetPhone() string {
+func (o *VerifyResponse) GetPhone() string {
 	if o == nil || IsNil(o.Phone) {
 		var ret string
 		return ret
@@ -428,7 +428,7 @@ func (o *MatchResponse) GetPhone() string {
 
 // GetPhoneOk returns a tuple with the Phone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetPhoneOk() (*string, bool) {
+func (o *VerifyResponse) GetPhoneOk() (*string, bool) {
 	if o == nil || IsNil(o.Phone) {
 		return nil, false
 	}
@@ -436,7 +436,7 @@ func (o *MatchResponse) GetPhoneOk() (*string, bool) {
 }
 
 // HasPhone returns a boolean if a field has been set.
-func (o *MatchResponse) HasPhone() bool {
+func (o *VerifyResponse) HasPhone() bool {
 	if o != nil && !IsNil(o.Phone) {
 		return true
 	}
@@ -445,12 +445,12 @@ func (o *MatchResponse) HasPhone() bool {
 }
 
 // SetPhone gets a reference to the given string and assigns it to the Phone field.
-func (o *MatchResponse) SetPhone(v string) {
+func (o *VerifyResponse) SetPhone(v string) {
 	o.Phone = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
-func (o *MatchResponse) GetEmail() string {
+func (o *VerifyResponse) GetEmail() string {
 	if o == nil || IsNil(o.Email) {
 		var ret string
 		return ret
@@ -460,7 +460,7 @@ func (o *MatchResponse) GetEmail() string {
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetEmailOk() (*string, bool) {
+func (o *VerifyResponse) GetEmailOk() (*string, bool) {
 	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
@@ -468,7 +468,7 @@ func (o *MatchResponse) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *MatchResponse) HasEmail() bool {
+func (o *VerifyResponse) HasEmail() bool {
 	if o != nil && !IsNil(o.Email) {
 		return true
 	}
@@ -477,12 +477,12 @@ func (o *MatchResponse) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *MatchResponse) SetEmail(v string) {
+func (o *VerifyResponse) SetEmail(v string) {
 	o.Email = &v
 }
 
 // GetMaid returns the Maid field value if set, zero value otherwise.
-func (o *MatchResponse) GetMaid() string {
+func (o *VerifyResponse) GetMaid() string {
 	if o == nil || IsNil(o.Maid) {
 		var ret string
 		return ret
@@ -492,7 +492,7 @@ func (o *MatchResponse) GetMaid() string {
 
 // GetMaidOk returns a tuple with the Maid field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetMaidOk() (*string, bool) {
+func (o *VerifyResponse) GetMaidOk() (*string, bool) {
 	if o == nil || IsNil(o.Maid) {
 		return nil, false
 	}
@@ -500,7 +500,7 @@ func (o *MatchResponse) GetMaidOk() (*string, bool) {
 }
 
 // HasMaid returns a boolean if a field has been set.
-func (o *MatchResponse) HasMaid() bool {
+func (o *VerifyResponse) HasMaid() bool {
 	if o != nil && !IsNil(o.Maid) {
 		return true
 	}
@@ -509,12 +509,12 @@ func (o *MatchResponse) HasMaid() bool {
 }
 
 // SetMaid gets a reference to the given string and assigns it to the Maid field.
-func (o *MatchResponse) SetMaid(v string) {
+func (o *VerifyResponse) SetMaid(v string) {
 	o.Maid = &v
 }
 
 // GetSocial returns the Social field value if set, zero value otherwise.
-func (o *MatchResponse) GetSocial() string {
+func (o *VerifyResponse) GetSocial() string {
 	if o == nil || IsNil(o.Social) {
 		var ret string
 		return ret
@@ -524,7 +524,7 @@ func (o *MatchResponse) GetSocial() string {
 
 // GetSocialOk returns a tuple with the Social field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetSocialOk() (*string, bool) {
+func (o *VerifyResponse) GetSocialOk() (*string, bool) {
 	if o == nil || IsNil(o.Social) {
 		return nil, false
 	}
@@ -532,7 +532,7 @@ func (o *MatchResponse) GetSocialOk() (*string, bool) {
 }
 
 // HasSocial returns a boolean if a field has been set.
-func (o *MatchResponse) HasSocial() bool {
+func (o *VerifyResponse) HasSocial() bool {
 	if o != nil && !IsNil(o.Social) {
 		return true
 	}
@@ -541,12 +541,12 @@ func (o *MatchResponse) HasSocial() bool {
 }
 
 // SetSocial gets a reference to the given string and assigns it to the Social field.
-func (o *MatchResponse) SetSocial(v string) {
+func (o *VerifyResponse) SetSocial(v string) {
 	o.Social = &v
 }
 
 // GetNonId returns the NonId field value if set, zero value otherwise.
-func (o *MatchResponse) GetNonId() string {
+func (o *VerifyResponse) GetNonId() string {
 	if o == nil || IsNil(o.NonId) {
 		var ret string
 		return ret
@@ -556,7 +556,7 @@ func (o *MatchResponse) GetNonId() string {
 
 // GetNonIdOk returns a tuple with the NonId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetNonIdOk() (*string, bool) {
+func (o *VerifyResponse) GetNonIdOk() (*string, bool) {
 	if o == nil || IsNil(o.NonId) {
 		return nil, false
 	}
@@ -564,7 +564,7 @@ func (o *MatchResponse) GetNonIdOk() (*string, bool) {
 }
 
 // HasNonId returns a boolean if a field has been set.
-func (o *MatchResponse) HasNonId() bool {
+func (o *VerifyResponse) HasNonId() bool {
 	if o != nil && !IsNil(o.NonId) {
 		return true
 	}
@@ -573,12 +573,12 @@ func (o *MatchResponse) HasNonId() bool {
 }
 
 // SetNonId gets a reference to the given string and assigns it to the NonId field.
-func (o *MatchResponse) SetNonId(v string) {
+func (o *VerifyResponse) SetNonId(v string) {
 	o.NonId = &v
 }
 
 // GetPanoramaId returns the PanoramaId field value if set, zero value otherwise.
-func (o *MatchResponse) GetPanoramaId() string {
+func (o *VerifyResponse) GetPanoramaId() string {
 	if o == nil || IsNil(o.PanoramaId) {
 		var ret string
 		return ret
@@ -588,7 +588,7 @@ func (o *MatchResponse) GetPanoramaId() string {
 
 // GetPanoramaIdOk returns a tuple with the PanoramaId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetPanoramaIdOk() (*string, bool) {
+func (o *VerifyResponse) GetPanoramaIdOk() (*string, bool) {
 	if o == nil || IsNil(o.PanoramaId) {
 		return nil, false
 	}
@@ -596,7 +596,7 @@ func (o *MatchResponse) GetPanoramaIdOk() (*string, bool) {
 }
 
 // HasPanoramaId returns a boolean if a field has been set.
-func (o *MatchResponse) HasPanoramaId() bool {
+func (o *VerifyResponse) HasPanoramaId() bool {
 	if o != nil && !IsNil(o.PanoramaId) {
 		return true
 	}
@@ -605,12 +605,12 @@ func (o *MatchResponse) HasPanoramaId() bool {
 }
 
 // SetPanoramaId gets a reference to the given string and assigns it to the PanoramaId field.
-func (o *MatchResponse) SetPanoramaId(v string) {
+func (o *VerifyResponse) SetPanoramaId(v string) {
 	o.PanoramaId = &v
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
-func (o *MatchResponse) GetIpAddress() string {
+func (o *VerifyResponse) GetIpAddress() string {
 	if o == nil || IsNil(o.IpAddress) {
 		var ret string
 		return ret
@@ -620,7 +620,7 @@ func (o *MatchResponse) GetIpAddress() string {
 
 // GetIpAddressOk returns a tuple with the IpAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetIpAddressOk() (*string, bool) {
+func (o *VerifyResponse) GetIpAddressOk() (*string, bool) {
 	if o == nil || IsNil(o.IpAddress) {
 		return nil, false
 	}
@@ -628,7 +628,7 @@ func (o *MatchResponse) GetIpAddressOk() (*string, bool) {
 }
 
 // HasIpAddress returns a boolean if a field has been set.
-func (o *MatchResponse) HasIpAddress() bool {
+func (o *VerifyResponse) HasIpAddress() bool {
 	if o != nil && !IsNil(o.IpAddress) {
 		return true
 	}
@@ -637,12 +637,12 @@ func (o *MatchResponse) HasIpAddress() bool {
 }
 
 // SetIpAddress gets a reference to the given string and assigns it to the IpAddress field.
-func (o *MatchResponse) SetIpAddress(v string) {
+func (o *VerifyResponse) SetIpAddress(v string) {
 	o.IpAddress = &v
 }
 
 // GetBirthday returns the Birthday field value if set, zero value otherwise.
-func (o *MatchResponse) GetBirthday() string {
+func (o *VerifyResponse) GetBirthday() string {
 	if o == nil || IsNil(o.Birthday) {
 		var ret string
 		return ret
@@ -652,7 +652,7 @@ func (o *MatchResponse) GetBirthday() string {
 
 // GetBirthdayOk returns a tuple with the Birthday field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetBirthdayOk() (*string, bool) {
+func (o *VerifyResponse) GetBirthdayOk() (*string, bool) {
 	if o == nil || IsNil(o.Birthday) {
 		return nil, false
 	}
@@ -660,7 +660,7 @@ func (o *MatchResponse) GetBirthdayOk() (*string, bool) {
 }
 
 // HasBirthday returns a boolean if a field has been set.
-func (o *MatchResponse) HasBirthday() bool {
+func (o *VerifyResponse) HasBirthday() bool {
 	if o != nil && !IsNil(o.Birthday) {
 		return true
 	}
@@ -669,12 +669,12 @@ func (o *MatchResponse) HasBirthday() bool {
 }
 
 // SetBirthday gets a reference to the given string and assigns it to the Birthday field.
-func (o *MatchResponse) SetBirthday(v string) {
+func (o *VerifyResponse) SetBirthday(v string) {
 	o.Birthday = &v
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise.
-func (o *MatchResponse) GetTitle() string {
+func (o *VerifyResponse) GetTitle() string {
 	if o == nil || IsNil(o.Title) {
 		var ret string
 		return ret
@@ -684,7 +684,7 @@ func (o *MatchResponse) GetTitle() string {
 
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetTitleOk() (*string, bool) {
+func (o *VerifyResponse) GetTitleOk() (*string, bool) {
 	if o == nil || IsNil(o.Title) {
 		return nil, false
 	}
@@ -692,7 +692,7 @@ func (o *MatchResponse) GetTitleOk() (*string, bool) {
 }
 
 // HasTitle returns a boolean if a field has been set.
-func (o *MatchResponse) HasTitle() bool {
+func (o *VerifyResponse) HasTitle() bool {
 	if o != nil && !IsNil(o.Title) {
 		return true
 	}
@@ -701,12 +701,12 @@ func (o *MatchResponse) HasTitle() bool {
 }
 
 // SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *MatchResponse) SetTitle(v string) {
+func (o *VerifyResponse) SetTitle(v string) {
 	o.Title = &v
 }
 
 // GetOrganization returns the Organization field value if set, zero value otherwise.
-func (o *MatchResponse) GetOrganization() string {
+func (o *VerifyResponse) GetOrganization() string {
 	if o == nil || IsNil(o.Organization) {
 		var ret string
 		return ret
@@ -716,7 +716,7 @@ func (o *MatchResponse) GetOrganization() string {
 
 // GetOrganizationOk returns a tuple with the Organization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetOrganizationOk() (*string, bool) {
+func (o *VerifyResponse) GetOrganizationOk() (*string, bool) {
 	if o == nil || IsNil(o.Organization) {
 		return nil, false
 	}
@@ -724,7 +724,7 @@ func (o *MatchResponse) GetOrganizationOk() (*string, bool) {
 }
 
 // HasOrganization returns a boolean if a field has been set.
-func (o *MatchResponse) HasOrganization() bool {
+func (o *VerifyResponse) HasOrganization() bool {
 	if o != nil && !IsNil(o.Organization) {
 		return true
 	}
@@ -733,12 +733,12 @@ func (o *MatchResponse) HasOrganization() bool {
 }
 
 // SetOrganization gets a reference to the given string and assigns it to the Organization field.
-func (o *MatchResponse) SetOrganization(v string) {
+func (o *VerifyResponse) SetOrganization(v string) {
 	o.Organization = &v
 }
 
 // GetRisk returns the Risk field value if set, zero value otherwise.
-func (o *MatchResponse) GetRisk() float64 {
+func (o *VerifyResponse) GetRisk() float64 {
 	if o == nil || IsNil(o.Risk) {
 		var ret float64
 		return ret
@@ -748,7 +748,7 @@ func (o *MatchResponse) GetRisk() float64 {
 
 // GetRiskOk returns a tuple with the Risk field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetRiskOk() (*float64, bool) {
+func (o *VerifyResponse) GetRiskOk() (*float64, bool) {
 	if o == nil || IsNil(o.Risk) {
 		return nil, false
 	}
@@ -756,7 +756,7 @@ func (o *MatchResponse) GetRiskOk() (*float64, bool) {
 }
 
 // HasRisk returns a boolean if a field has been set.
-func (o *MatchResponse) HasRisk() bool {
+func (o *VerifyResponse) HasRisk() bool {
 	if o != nil && !IsNil(o.Risk) {
 		return true
 	}
@@ -765,12 +765,12 @@ func (o *MatchResponse) HasRisk() bool {
 }
 
 // SetRisk gets a reference to the given float64 and assigns it to the Risk field.
-func (o *MatchResponse) SetRisk(v float64) {
+func (o *VerifyResponse) SetRisk(v float64) {
 	o.Risk = &v
 }
 
 // GetEvidence returns the Evidence field value if set, zero value otherwise.
-func (o *MatchResponse) GetEvidence() Evidence {
+func (o *VerifyResponse) GetEvidence() Evidence {
 	if o == nil || IsNil(o.Evidence) {
 		var ret Evidence
 		return ret
@@ -780,7 +780,7 @@ func (o *MatchResponse) GetEvidence() Evidence {
 
 // GetEvidenceOk returns a tuple with the Evidence field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetEvidenceOk() (*Evidence, bool) {
+func (o *VerifyResponse) GetEvidenceOk() (*Evidence, bool) {
 	if o == nil || IsNil(o.Evidence) {
 		return nil, false
 	}
@@ -788,7 +788,7 @@ func (o *MatchResponse) GetEvidenceOk() (*Evidence, bool) {
 }
 
 // HasEvidence returns a boolean if a field has been set.
-func (o *MatchResponse) HasEvidence() bool {
+func (o *VerifyResponse) HasEvidence() bool {
 	if o != nil && !IsNil(o.Evidence) {
 		return true
 	}
@@ -797,12 +797,12 @@ func (o *MatchResponse) HasEvidence() bool {
 }
 
 // SetEvidence gets a reference to the given Evidence and assigns it to the Evidence field.
-func (o *MatchResponse) SetEvidence(v Evidence) {
+func (o *VerifyResponse) SetEvidence(v Evidence) {
 	o.Evidence = &v
 }
 
 // GetRiskV2 returns the RiskV2 field value if set, zero value otherwise.
-func (o *MatchResponse) GetRiskV2() float64 {
+func (o *VerifyResponse) GetRiskV2() float64 {
 	if o == nil || IsNil(o.RiskV2) {
 		var ret float64
 		return ret
@@ -812,7 +812,7 @@ func (o *MatchResponse) GetRiskV2() float64 {
 
 // GetRiskV2Ok returns a tuple with the RiskV2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetRiskV2Ok() (*float64, bool) {
+func (o *VerifyResponse) GetRiskV2Ok() (*float64, bool) {
 	if o == nil || IsNil(o.RiskV2) {
 		return nil, false
 	}
@@ -820,7 +820,7 @@ func (o *MatchResponse) GetRiskV2Ok() (*float64, bool) {
 }
 
 // HasRiskV2 returns a boolean if a field has been set.
-func (o *MatchResponse) HasRiskV2() bool {
+func (o *VerifyResponse) HasRiskV2() bool {
 	if o != nil && !IsNil(o.RiskV2) {
 		return true
 	}
@@ -829,12 +829,12 @@ func (o *MatchResponse) HasRiskV2() bool {
 }
 
 // SetRiskV2 gets a reference to the given float64 and assigns it to the RiskV2 field.
-func (o *MatchResponse) SetRiskV2(v float64) {
+func (o *VerifyResponse) SetRiskV2(v float64) {
 	o.RiskV2 = &v
 }
 
 // GetRiskV3 returns the RiskV3 field value if set, zero value otherwise.
-func (o *MatchResponse) GetRiskV3() float64 {
+func (o *VerifyResponse) GetRiskV3() float64 {
 	if o == nil || IsNil(o.RiskV3) {
 		var ret float64
 		return ret
@@ -844,7 +844,7 @@ func (o *MatchResponse) GetRiskV3() float64 {
 
 // GetRiskV3Ok returns a tuple with the RiskV3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetRiskV3Ok() (*float64, bool) {
+func (o *VerifyResponse) GetRiskV3Ok() (*float64, bool) {
 	if o == nil || IsNil(o.RiskV3) {
 		return nil, false
 	}
@@ -852,7 +852,7 @@ func (o *MatchResponse) GetRiskV3Ok() (*float64, bool) {
 }
 
 // HasRiskV3 returns a boolean if a field has been set.
-func (o *MatchResponse) HasRiskV3() bool {
+func (o *VerifyResponse) HasRiskV3() bool {
 	if o != nil && !IsNil(o.RiskV3) {
 		return true
 	}
@@ -861,12 +861,12 @@ func (o *MatchResponse) HasRiskV3() bool {
 }
 
 // SetRiskV3 gets a reference to the given float64 and assigns it to the RiskV3 field.
-func (o *MatchResponse) SetRiskV3(v float64) {
+func (o *VerifyResponse) SetRiskV3(v float64) {
 	o.RiskV3 = &v
 }
 
 // GetScoreDetails returns the ScoreDetails field value if set, zero value otherwise.
-func (o *MatchResponse) GetScoreDetails() []ScoreDetails {
+func (o *VerifyResponse) GetScoreDetails() []ScoreDetails {
 	if o == nil || IsNil(o.ScoreDetails) {
 		var ret []ScoreDetails
 		return ret
@@ -876,7 +876,7 @@ func (o *MatchResponse) GetScoreDetails() []ScoreDetails {
 
 // GetScoreDetailsOk returns a tuple with the ScoreDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MatchResponse) GetScoreDetailsOk() ([]ScoreDetails, bool) {
+func (o *VerifyResponse) GetScoreDetailsOk() ([]ScoreDetails, bool) {
 	if o == nil || IsNil(o.ScoreDetails) {
 		return nil, false
 	}
@@ -884,7 +884,7 @@ func (o *MatchResponse) GetScoreDetailsOk() ([]ScoreDetails, bool) {
 }
 
 // HasScoreDetails returns a boolean if a field has been set.
-func (o *MatchResponse) HasScoreDetails() bool {
+func (o *VerifyResponse) HasScoreDetails() bool {
 	if o != nil && !IsNil(o.ScoreDetails) {
 		return true
 	}
@@ -893,11 +893,11 @@ func (o *MatchResponse) HasScoreDetails() bool {
 }
 
 // SetScoreDetails gets a reference to the given []ScoreDetails and assigns it to the ScoreDetails field.
-func (o *MatchResponse) SetScoreDetails(v []ScoreDetails) {
+func (o *VerifyResponse) SetScoreDetails(v []ScoreDetails) {
 	o.ScoreDetails = v
 }
 
-func (o MatchResponse) MarshalJSON() ([]byte, error) {
+func (o VerifyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -905,7 +905,7 @@ func (o MatchResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o MatchResponse) ToMap() (map[string]interface{}, error) {
+func (o VerifyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.AddressLine1) {
 		toSerialize["addressLine1"] = o.AddressLine1
@@ -988,38 +988,38 @@ func (o MatchResponse) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-type NullableMatchResponse struct {
-	value *MatchResponse
+type NullableVerifyResponse struct {
+	value *VerifyResponse
 	isSet bool
 }
 
-func (v NullableMatchResponse) Get() *MatchResponse {
+func (v NullableVerifyResponse) Get() *VerifyResponse {
 	return v.value
 }
 
-func (v *NullableMatchResponse) Set(val *MatchResponse) {
+func (v *NullableVerifyResponse) Set(val *VerifyResponse) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableMatchResponse) IsSet() bool {
+func (v NullableVerifyResponse) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableMatchResponse) Unset() {
+func (v *NullableVerifyResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableMatchResponse(val *MatchResponse) *NullableMatchResponse {
-	return &NullableMatchResponse{value: val, isSet: true}
+func NewNullableVerifyResponse(val *VerifyResponse) *NullableVerifyResponse {
+	return &NullableVerifyResponse{value: val, isSet: true}
 }
 
-func (v NullableMatchResponse) MarshalJSON() ([]byte, error) {
+func (v NullableVerifyResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableMatchResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableVerifyResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

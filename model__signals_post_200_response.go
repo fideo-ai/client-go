@@ -3,7 +3,7 @@ Fideo API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
-API version: 1.0.2
+API version: 1.0.4
 Contact: support@fideo.ai
 */
 
@@ -17,29 +17,29 @@ import (
 	"fmt"
 )
 
-// VerifySignalsPost200Response - struct for VerifySignalsPost200Response
-type VerifySignalsPost200Response struct {
+// SignalsPost200Response - struct for SignalsPost200Response
+type SignalsPost200Response struct {
 	SignalsResponseV0 *SignalsResponseV0
 	SignalsResponseV20240424 *SignalsResponseV20240424
 }
 
-// SignalsResponseV0AsVerifySignalsPost200Response is a convenience function that returns SignalsResponseV0 wrapped in VerifySignalsPost200Response
-func SignalsResponseV0AsVerifySignalsPost200Response(v *SignalsResponseV0) VerifySignalsPost200Response {
-	return VerifySignalsPost200Response{
+// SignalsResponseV0AsSignalsPost200Response is a convenience function that returns SignalsResponseV0 wrapped in SignalsPost200Response
+func SignalsResponseV0AsSignalsPost200Response(v *SignalsResponseV0) SignalsPost200Response {
+	return SignalsPost200Response{
 		SignalsResponseV0: v,
 	}
 }
 
-// SignalsResponseV20240424AsVerifySignalsPost200Response is a convenience function that returns SignalsResponseV20240424 wrapped in VerifySignalsPost200Response
-func SignalsResponseV20240424AsVerifySignalsPost200Response(v *SignalsResponseV20240424) VerifySignalsPost200Response {
-	return VerifySignalsPost200Response{
+// SignalsResponseV20240424AsSignalsPost200Response is a convenience function that returns SignalsResponseV20240424 wrapped in SignalsPost200Response
+func SignalsResponseV20240424AsSignalsPost200Response(v *SignalsResponseV20240424) SignalsPost200Response {
+	return SignalsPost200Response{
 		SignalsResponseV20240424: v,
 	}
 }
 
 
 // Unmarshal JSON data into one of the pointers in the struct
-func (dst *VerifySignalsPost200Response) UnmarshalJSON(data []byte) error {
+func (dst *SignalsPost200Response) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
 	// try to unmarshal data into SignalsResponseV0
@@ -81,16 +81,16 @@ func (dst *VerifySignalsPost200Response) UnmarshalJSON(data []byte) error {
 		dst.SignalsResponseV0 = nil
 		dst.SignalsResponseV20240424 = nil
 
-		return fmt.Errorf("data matches more than one schema in oneOf(VerifySignalsPost200Response)")
+		return fmt.Errorf("data matches more than one schema in oneOf(SignalsPost200Response)")
 	} else if match == 1 {
 		return nil // exactly one match
 	} else { // no match
-		return fmt.Errorf("data failed to match schemas in oneOf(VerifySignalsPost200Response)")
+		return fmt.Errorf("data failed to match schemas in oneOf(SignalsPost200Response)")
 	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src VerifySignalsPost200Response) MarshalJSON() ([]byte, error) {
+func (src SignalsPost200Response) MarshalJSON() ([]byte, error) {
 	if src.SignalsResponseV0 != nil {
 		return json.Marshal(&src.SignalsResponseV0)
 	}
@@ -103,7 +103,7 @@ func (src VerifySignalsPost200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *VerifySignalsPost200Response) GetActualInstance() (interface{}) {
+func (obj *SignalsPost200Response) GetActualInstance() (interface{}) {
 	if obj == nil {
 		return nil
 	}
@@ -119,38 +119,38 @@ func (obj *VerifySignalsPost200Response) GetActualInstance() (interface{}) {
 	return nil
 }
 
-type NullableVerifySignalsPost200Response struct {
-	value *VerifySignalsPost200Response
+type NullableSignalsPost200Response struct {
+	value *SignalsPost200Response
 	isSet bool
 }
 
-func (v NullableVerifySignalsPost200Response) Get() *VerifySignalsPost200Response {
+func (v NullableSignalsPost200Response) Get() *SignalsPost200Response {
 	return v.value
 }
 
-func (v *NullableVerifySignalsPost200Response) Set(val *VerifySignalsPost200Response) {
+func (v *NullableSignalsPost200Response) Set(val *SignalsPost200Response) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableVerifySignalsPost200Response) IsSet() bool {
+func (v NullableSignalsPost200Response) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableVerifySignalsPost200Response) Unset() {
+func (v *NullableSignalsPost200Response) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableVerifySignalsPost200Response(val *VerifySignalsPost200Response) *NullableVerifySignalsPost200Response {
-	return &NullableVerifySignalsPost200Response{value: val, isSet: true}
+func NewNullableSignalsPost200Response(val *SignalsPost200Response) *NullableSignalsPost200Response {
+	return &NullableSignalsPost200Response{value: val, isSet: true}
 }
 
-func (v NullableVerifySignalsPost200Response) MarshalJSON() ([]byte, error) {
+func (v NullableSignalsPost200Response) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableVerifySignalsPost200Response) UnmarshalJSON(src []byte) error {
+func (v *NullableSignalsPost200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
