@@ -1,5 +1,5 @@
 /*
-Fideo API
+Fideo Production API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
@@ -90,7 +90,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator//go",
+		UserAgent:        "OpenAPI-Generator/1.0.4/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

@@ -1,5 +1,5 @@
 /*
-Fideo API
+Fideo Production API
 
 Fideo Intelligence offers an identity intelligence product that protects the public good. - [Fideo Privacy Policy](https://www.fideo.ai/privacy-policy/)
 
@@ -42,13 +42,15 @@ var (
 	queryDescape    = strings.NewReplacer( "%5B", "[", "%5D", "]" )
 )
 
-// APIClient manages communication with the Fideo API API v1.0.4
+// APIClient manages communication with the Fideo Production API API v1.0.4
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
+
+	BetaAPI *BetaAPIService
 
 	SignalsAPI *SignalsAPIService
 
@@ -71,6 +73,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
+	c.BetaAPI = (*BetaAPIService)(&c.common)
 	c.SignalsAPI = (*SignalsAPIService)(&c.common)
 	c.VerifyAPI = (*VerifyAPIService)(&c.common)
 

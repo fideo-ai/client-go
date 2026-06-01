@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **PartnerKeys** | Pointer to **map[string]string** |  | [optional] 
 **LiNonid** | Pointer to **string** |  | [optional] 
 **PanoramaId** | Pointer to **string** |  | [optional] 
-**Placekey** | Pointer to **string** |  | [optional] 
 **GeneratePid** | Pointer to **bool** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
@@ -497,31 +496,6 @@ SetPanoramaId sets PanoramaId field to given value.
 `func (o *MultiFieldReq) HasPanoramaId() bool`
 
 HasPanoramaId returns a boolean if a field has been set.
-
-### GetPlacekey
-
-`func (o *MultiFieldReq) GetPlacekey() string`
-
-GetPlacekey returns the Placekey field if non-nil, zero value otherwise.
-
-### GetPlacekeyOk
-
-`func (o *MultiFieldReq) GetPlacekeyOk() (*string, bool)`
-
-GetPlacekeyOk returns a tuple with the Placekey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPlacekey
-
-`func (o *MultiFieldReq) SetPlacekey(v string)`
-
-SetPlacekey sets Placekey field to given value.
-
-### HasPlacekey
-
-`func (o *MultiFieldReq) HasPlacekey() bool`
-
-HasPlacekey returns a boolean if a field has been set.
 
 ### GetGeneratePid
 

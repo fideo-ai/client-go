@@ -2,11 +2,14 @@
 .travis.yml
 README.md
 api/openapi.yaml
+api_beta.go
 api_signals.go
 api_verify.go
 client.go
 configuration.go
 docs/Alias.md
+docs/BetaAPI.md
+docs/BetaSignalsPatternsSummaryPost400Response.md
 docs/Demographics.md
 docs/Economic.md
 docs/Education.md
@@ -28,6 +31,10 @@ docs/PersonNameReq.md
 docs/Phone.md
 docs/Photo.md
 docs/ScoreDetails.md
+docs/SignalPatternRecencyResponse.md
+docs/SignalPatternResponseUnit.md
+docs/SignalPatternResponseUnitCount.md
+docs/SignalPatternsRequest.md
 docs/SignalsAPI.md
 docs/SignalsPost200Response.md
 docs/SignalsResponseV0.md
@@ -40,6 +47,7 @@ docs/VerifyResponse.md
 git_push.sh
 go.mod
 go.sum
+model__beta_signals_patterns_summary_post_400_response.go
 model__signals_post_200_response.go
 model_alias.go
 model_demographics.go
@@ -63,6 +71,10 @@ model_person_name_req.go
 model_phone.go
 model_photo.go
 model_score_details.go
+model_signal_pattern_recency_response.go
+model_signal_pattern_response_unit.go
+model_signal_pattern_response_unit_count.go
+model_signal_patterns_request.go
 model_signals_response_v0.go
 model_signals_response_v20240424.go
 model_social_profile_details.go
@@ -70,4 +82,5 @@ model_social_profile_req.go
 model_social_profile_urls.go
 model_verify_response.go
 response.go
+test/api_beta_test.go
 utils.go
