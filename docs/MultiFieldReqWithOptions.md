@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **Confidence** | Pointer to **string** |  | [optional] [default to "LOW"]
 **Birthday** | Pointer to **string** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
+**SessionId** | Pointer to **string** | Optional UUIDv7 session identifier. A recent valid value reuses an existing verify session and returns 200; omitted, blank, or old values create a new session and return 201. | [optional] 
+**PatternInterval** | Pointer to **string** | Optional signal-pattern interval to decorate signal email responses | [optional] 
 **Countries** | Pointer to **[]string** |  | [optional] 
 **ExcludedCountries** | Pointer to **[]string** |  | [optional] 
 
@@ -129,6 +131,56 @@ SetIpAddress sets IpAddress field to given value.
 `func (o *MultiFieldReqWithOptions) HasIpAddress() bool`
 
 HasIpAddress returns a boolean if a field has been set.
+
+### GetSessionId
+
+`func (o *MultiFieldReqWithOptions) GetSessionId() string`
+
+GetSessionId returns the SessionId field if non-nil, zero value otherwise.
+
+### GetSessionIdOk
+
+`func (o *MultiFieldReqWithOptions) GetSessionIdOk() (*string, bool)`
+
+GetSessionIdOk returns a tuple with the SessionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionId
+
+`func (o *MultiFieldReqWithOptions) SetSessionId(v string)`
+
+SetSessionId sets SessionId field to given value.
+
+### HasSessionId
+
+`func (o *MultiFieldReqWithOptions) HasSessionId() bool`
+
+HasSessionId returns a boolean if a field has been set.
+
+### GetPatternInterval
+
+`func (o *MultiFieldReqWithOptions) GetPatternInterval() string`
+
+GetPatternInterval returns the PatternInterval field if non-nil, zero value otherwise.
+
+### GetPatternIntervalOk
+
+`func (o *MultiFieldReqWithOptions) GetPatternIntervalOk() (*string, bool)`
+
+GetPatternIntervalOk returns a tuple with the PatternInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPatternInterval
+
+`func (o *MultiFieldReqWithOptions) SetPatternInterval(v string)`
+
+SetPatternInterval sets PatternInterval field to given value.
+
+### HasPatternInterval
+
+`func (o *MultiFieldReqWithOptions) HasPatternInterval() bool`
+
+HasPatternInterval returns a boolean if a field has been set.
 
 ### GetCountries
 

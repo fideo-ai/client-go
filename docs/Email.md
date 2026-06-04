@@ -14,6 +14,12 @@ Name | Type | Description | Notes
 **Sha256** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Activity** | Pointer to **float64** |  | [optional] 
+**Hour** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
+**Day** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
+**Week** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
+**Month** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
+**SixMonth** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
+**Year** | Pointer to [**SignalPatternResponseUnit**](SignalPatternResponseUnit.md) |  | [optional] 
 
 ## Methods
 
@@ -283,6 +289,156 @@ SetActivity sets Activity field to given value.
 `func (o *Email) HasActivity() bool`
 
 HasActivity returns a boolean if a field has been set.
+
+### GetHour
+
+`func (o *Email) GetHour() SignalPatternResponseUnit`
+
+GetHour returns the Hour field if non-nil, zero value otherwise.
+
+### GetHourOk
+
+`func (o *Email) GetHourOk() (*SignalPatternResponseUnit, bool)`
+
+GetHourOk returns a tuple with the Hour field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHour
+
+`func (o *Email) SetHour(v SignalPatternResponseUnit)`
+
+SetHour sets Hour field to given value.
+
+### HasHour
+
+`func (o *Email) HasHour() bool`
+
+HasHour returns a boolean if a field has been set.
+
+### GetDay
+
+`func (o *Email) GetDay() SignalPatternResponseUnit`
+
+GetDay returns the Day field if non-nil, zero value otherwise.
+
+### GetDayOk
+
+`func (o *Email) GetDayOk() (*SignalPatternResponseUnit, bool)`
+
+GetDayOk returns a tuple with the Day field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDay
+
+`func (o *Email) SetDay(v SignalPatternResponseUnit)`
+
+SetDay sets Day field to given value.
+
+### HasDay
+
+`func (o *Email) HasDay() bool`
+
+HasDay returns a boolean if a field has been set.
+
+### GetWeek
+
+`func (o *Email) GetWeek() SignalPatternResponseUnit`
+
+GetWeek returns the Week field if non-nil, zero value otherwise.
+
+### GetWeekOk
+
+`func (o *Email) GetWeekOk() (*SignalPatternResponseUnit, bool)`
+
+GetWeekOk returns a tuple with the Week field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWeek
+
+`func (o *Email) SetWeek(v SignalPatternResponseUnit)`
+
+SetWeek sets Week field to given value.
+
+### HasWeek
+
+`func (o *Email) HasWeek() bool`
+
+HasWeek returns a boolean if a field has been set.
+
+### GetMonth
+
+`func (o *Email) GetMonth() SignalPatternResponseUnit`
+
+GetMonth returns the Month field if non-nil, zero value otherwise.
+
+### GetMonthOk
+
+`func (o *Email) GetMonthOk() (*SignalPatternResponseUnit, bool)`
+
+GetMonthOk returns a tuple with the Month field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMonth
+
+`func (o *Email) SetMonth(v SignalPatternResponseUnit)`
+
+SetMonth sets Month field to given value.
+
+### HasMonth
+
+`func (o *Email) HasMonth() bool`
+
+HasMonth returns a boolean if a field has been set.
+
+### GetSixMonth
+
+`func (o *Email) GetSixMonth() SignalPatternResponseUnit`
+
+GetSixMonth returns the SixMonth field if non-nil, zero value otherwise.
+
+### GetSixMonthOk
+
+`func (o *Email) GetSixMonthOk() (*SignalPatternResponseUnit, bool)`
+
+GetSixMonthOk returns a tuple with the SixMonth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSixMonth
+
+`func (o *Email) SetSixMonth(v SignalPatternResponseUnit)`
+
+SetSixMonth sets SixMonth field to given value.
+
+### HasSixMonth
+
+`func (o *Email) HasSixMonth() bool`
+
+HasSixMonth returns a boolean if a field has been set.
+
+### GetYear
+
+`func (o *Email) GetYear() SignalPatternResponseUnit`
+
+GetYear returns the Year field if non-nil, zero value otherwise.
+
+### GetYearOk
+
+`func (o *Email) GetYearOk() (*SignalPatternResponseUnit, bool)`
+
+GetYearOk returns a tuple with the Year field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetYear
+
+`func (o *Email) SetYear(v SignalPatternResponseUnit)`
+
+SetYear sets Year field to given value.
+
+### HasYear
+
+`func (o *Email) HasYear() bool`
+
+HasYear returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

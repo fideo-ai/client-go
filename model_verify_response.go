@@ -20,6 +20,9 @@ var _ MappedNullable = &VerifyResponse{}
 
 // VerifyResponse struct for VerifyResponse
 type VerifyResponse struct {
+	Risk *float64 `json:"risk,omitempty"`
+	Checks []CheckResult `json:"checks,omitempty"`
+	SessionId *string `json:"sessionId,omitempty"`
 	AddressLine1 *string `json:"addressLine1,omitempty"`
 	AddressLine2 *string `json:"addressLine2,omitempty"`
 	City *string `json:"city,omitempty"`
@@ -33,19 +36,12 @@ type VerifyResponse struct {
 	FullName *string `json:"fullName,omitempty"`
 	Phone *string `json:"phone,omitempty"`
 	Email *string `json:"email,omitempty"`
-	Maid *string `json:"maid,omitempty"`
 	Social *string `json:"social,omitempty"`
-	NonId *string `json:"nonId,omitempty"`
-	PanoramaId *string `json:"panoramaId,omitempty"`
 	IpAddress *string `json:"ipAddress,omitempty"`
 	Birthday *string `json:"birthday,omitempty"`
 	Title *string `json:"title,omitempty"`
 	Organization *string `json:"organization,omitempty"`
-	Risk *float64 `json:"risk,omitempty"`
 	Evidence *Evidence `json:"evidence,omitempty"`
-	RiskV2 *float64 `json:"riskV2,omitempty"`
-	RiskV3 *float64 `json:"riskV3,omitempty"`
-	ScoreDetails []ScoreDetails `json:"scoreDetails,omitempty"`
 }
 
 // NewVerifyResponse instantiates a new VerifyResponse object
@@ -63,6 +59,102 @@ func NewVerifyResponse() *VerifyResponse {
 func NewVerifyResponseWithDefaults() *VerifyResponse {
 	this := VerifyResponse{}
 	return &this
+}
+
+// GetRisk returns the Risk field value if set, zero value otherwise.
+func (o *VerifyResponse) GetRisk() float64 {
+	if o == nil || IsNil(o.Risk) {
+		var ret float64
+		return ret
+	}
+	return *o.Risk
+}
+
+// GetRiskOk returns a tuple with the Risk field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifyResponse) GetRiskOk() (*float64, bool) {
+	if o == nil || IsNil(o.Risk) {
+		return nil, false
+	}
+	return o.Risk, true
+}
+
+// HasRisk returns a boolean if a field has been set.
+func (o *VerifyResponse) HasRisk() bool {
+	if o != nil && !IsNil(o.Risk) {
+		return true
+	}
+
+	return false
+}
+
+// SetRisk gets a reference to the given float64 and assigns it to the Risk field.
+func (o *VerifyResponse) SetRisk(v float64) {
+	o.Risk = &v
+}
+
+// GetChecks returns the Checks field value if set, zero value otherwise.
+func (o *VerifyResponse) GetChecks() []CheckResult {
+	if o == nil || IsNil(o.Checks) {
+		var ret []CheckResult
+		return ret
+	}
+	return o.Checks
+}
+
+// GetChecksOk returns a tuple with the Checks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifyResponse) GetChecksOk() ([]CheckResult, bool) {
+	if o == nil || IsNil(o.Checks) {
+		return nil, false
+	}
+	return o.Checks, true
+}
+
+// HasChecks returns a boolean if a field has been set.
+func (o *VerifyResponse) HasChecks() bool {
+	if o != nil && !IsNil(o.Checks) {
+		return true
+	}
+
+	return false
+}
+
+// SetChecks gets a reference to the given []CheckResult and assigns it to the Checks field.
+func (o *VerifyResponse) SetChecks(v []CheckResult) {
+	o.Checks = v
+}
+
+// GetSessionId returns the SessionId field value if set, zero value otherwise.
+func (o *VerifyResponse) GetSessionId() string {
+	if o == nil || IsNil(o.SessionId) {
+		var ret string
+		return ret
+	}
+	return *o.SessionId
+}
+
+// GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VerifyResponse) GetSessionIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SessionId) {
+		return nil, false
+	}
+	return o.SessionId, true
+}
+
+// HasSessionId returns a boolean if a field has been set.
+func (o *VerifyResponse) HasSessionId() bool {
+	if o != nil && !IsNil(o.SessionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSessionId gets a reference to the given string and assigns it to the SessionId field.
+func (o *VerifyResponse) SetSessionId(v string) {
+	o.SessionId = &v
 }
 
 // GetAddressLine1 returns the AddressLine1 field value if set, zero value otherwise.
@@ -481,38 +573,6 @@ func (o *VerifyResponse) SetEmail(v string) {
 	o.Email = &v
 }
 
-// GetMaid returns the Maid field value if set, zero value otherwise.
-func (o *VerifyResponse) GetMaid() string {
-	if o == nil || IsNil(o.Maid) {
-		var ret string
-		return ret
-	}
-	return *o.Maid
-}
-
-// GetMaidOk returns a tuple with the Maid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetMaidOk() (*string, bool) {
-	if o == nil || IsNil(o.Maid) {
-		return nil, false
-	}
-	return o.Maid, true
-}
-
-// HasMaid returns a boolean if a field has been set.
-func (o *VerifyResponse) HasMaid() bool {
-	if o != nil && !IsNil(o.Maid) {
-		return true
-	}
-
-	return false
-}
-
-// SetMaid gets a reference to the given string and assigns it to the Maid field.
-func (o *VerifyResponse) SetMaid(v string) {
-	o.Maid = &v
-}
-
 // GetSocial returns the Social field value if set, zero value otherwise.
 func (o *VerifyResponse) GetSocial() string {
 	if o == nil || IsNil(o.Social) {
@@ -543,70 +603,6 @@ func (o *VerifyResponse) HasSocial() bool {
 // SetSocial gets a reference to the given string and assigns it to the Social field.
 func (o *VerifyResponse) SetSocial(v string) {
 	o.Social = &v
-}
-
-// GetNonId returns the NonId field value if set, zero value otherwise.
-func (o *VerifyResponse) GetNonId() string {
-	if o == nil || IsNil(o.NonId) {
-		var ret string
-		return ret
-	}
-	return *o.NonId
-}
-
-// GetNonIdOk returns a tuple with the NonId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetNonIdOk() (*string, bool) {
-	if o == nil || IsNil(o.NonId) {
-		return nil, false
-	}
-	return o.NonId, true
-}
-
-// HasNonId returns a boolean if a field has been set.
-func (o *VerifyResponse) HasNonId() bool {
-	if o != nil && !IsNil(o.NonId) {
-		return true
-	}
-
-	return false
-}
-
-// SetNonId gets a reference to the given string and assigns it to the NonId field.
-func (o *VerifyResponse) SetNonId(v string) {
-	o.NonId = &v
-}
-
-// GetPanoramaId returns the PanoramaId field value if set, zero value otherwise.
-func (o *VerifyResponse) GetPanoramaId() string {
-	if o == nil || IsNil(o.PanoramaId) {
-		var ret string
-		return ret
-	}
-	return *o.PanoramaId
-}
-
-// GetPanoramaIdOk returns a tuple with the PanoramaId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetPanoramaIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PanoramaId) {
-		return nil, false
-	}
-	return o.PanoramaId, true
-}
-
-// HasPanoramaId returns a boolean if a field has been set.
-func (o *VerifyResponse) HasPanoramaId() bool {
-	if o != nil && !IsNil(o.PanoramaId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPanoramaId gets a reference to the given string and assigns it to the PanoramaId field.
-func (o *VerifyResponse) SetPanoramaId(v string) {
-	o.PanoramaId = &v
 }
 
 // GetIpAddress returns the IpAddress field value if set, zero value otherwise.
@@ -737,38 +733,6 @@ func (o *VerifyResponse) SetOrganization(v string) {
 	o.Organization = &v
 }
 
-// GetRisk returns the Risk field value if set, zero value otherwise.
-func (o *VerifyResponse) GetRisk() float64 {
-	if o == nil || IsNil(o.Risk) {
-		var ret float64
-		return ret
-	}
-	return *o.Risk
-}
-
-// GetRiskOk returns a tuple with the Risk field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetRiskOk() (*float64, bool) {
-	if o == nil || IsNil(o.Risk) {
-		return nil, false
-	}
-	return o.Risk, true
-}
-
-// HasRisk returns a boolean if a field has been set.
-func (o *VerifyResponse) HasRisk() bool {
-	if o != nil && !IsNil(o.Risk) {
-		return true
-	}
-
-	return false
-}
-
-// SetRisk gets a reference to the given float64 and assigns it to the Risk field.
-func (o *VerifyResponse) SetRisk(v float64) {
-	o.Risk = &v
-}
-
 // GetEvidence returns the Evidence field value if set, zero value otherwise.
 func (o *VerifyResponse) GetEvidence() Evidence {
 	if o == nil || IsNil(o.Evidence) {
@@ -801,102 +765,6 @@ func (o *VerifyResponse) SetEvidence(v Evidence) {
 	o.Evidence = &v
 }
 
-// GetRiskV2 returns the RiskV2 field value if set, zero value otherwise.
-func (o *VerifyResponse) GetRiskV2() float64 {
-	if o == nil || IsNil(o.RiskV2) {
-		var ret float64
-		return ret
-	}
-	return *o.RiskV2
-}
-
-// GetRiskV2Ok returns a tuple with the RiskV2 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetRiskV2Ok() (*float64, bool) {
-	if o == nil || IsNil(o.RiskV2) {
-		return nil, false
-	}
-	return o.RiskV2, true
-}
-
-// HasRiskV2 returns a boolean if a field has been set.
-func (o *VerifyResponse) HasRiskV2() bool {
-	if o != nil && !IsNil(o.RiskV2) {
-		return true
-	}
-
-	return false
-}
-
-// SetRiskV2 gets a reference to the given float64 and assigns it to the RiskV2 field.
-func (o *VerifyResponse) SetRiskV2(v float64) {
-	o.RiskV2 = &v
-}
-
-// GetRiskV3 returns the RiskV3 field value if set, zero value otherwise.
-func (o *VerifyResponse) GetRiskV3() float64 {
-	if o == nil || IsNil(o.RiskV3) {
-		var ret float64
-		return ret
-	}
-	return *o.RiskV3
-}
-
-// GetRiskV3Ok returns a tuple with the RiskV3 field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetRiskV3Ok() (*float64, bool) {
-	if o == nil || IsNil(o.RiskV3) {
-		return nil, false
-	}
-	return o.RiskV3, true
-}
-
-// HasRiskV3 returns a boolean if a field has been set.
-func (o *VerifyResponse) HasRiskV3() bool {
-	if o != nil && !IsNil(o.RiskV3) {
-		return true
-	}
-
-	return false
-}
-
-// SetRiskV3 gets a reference to the given float64 and assigns it to the RiskV3 field.
-func (o *VerifyResponse) SetRiskV3(v float64) {
-	o.RiskV3 = &v
-}
-
-// GetScoreDetails returns the ScoreDetails field value if set, zero value otherwise.
-func (o *VerifyResponse) GetScoreDetails() []ScoreDetails {
-	if o == nil || IsNil(o.ScoreDetails) {
-		var ret []ScoreDetails
-		return ret
-	}
-	return o.ScoreDetails
-}
-
-// GetScoreDetailsOk returns a tuple with the ScoreDetails field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *VerifyResponse) GetScoreDetailsOk() ([]ScoreDetails, bool) {
-	if o == nil || IsNil(o.ScoreDetails) {
-		return nil, false
-	}
-	return o.ScoreDetails, true
-}
-
-// HasScoreDetails returns a boolean if a field has been set.
-func (o *VerifyResponse) HasScoreDetails() bool {
-	if o != nil && !IsNil(o.ScoreDetails) {
-		return true
-	}
-
-	return false
-}
-
-// SetScoreDetails gets a reference to the given []ScoreDetails and assigns it to the ScoreDetails field.
-func (o *VerifyResponse) SetScoreDetails(v []ScoreDetails) {
-	o.ScoreDetails = v
-}
-
 func (o VerifyResponse) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -907,6 +775,15 @@ func (o VerifyResponse) MarshalJSON() ([]byte, error) {
 
 func (o VerifyResponse) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Risk) {
+		toSerialize["risk"] = o.Risk
+	}
+	if !IsNil(o.Checks) {
+		toSerialize["checks"] = o.Checks
+	}
+	if !IsNil(o.SessionId) {
+		toSerialize["sessionId"] = o.SessionId
+	}
 	if !IsNil(o.AddressLine1) {
 		toSerialize["addressLine1"] = o.AddressLine1
 	}
@@ -946,17 +823,8 @@ func (o VerifyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Email) {
 		toSerialize["email"] = o.Email
 	}
-	if !IsNil(o.Maid) {
-		toSerialize["maid"] = o.Maid
-	}
 	if !IsNil(o.Social) {
 		toSerialize["social"] = o.Social
-	}
-	if !IsNil(o.NonId) {
-		toSerialize["nonId"] = o.NonId
-	}
-	if !IsNil(o.PanoramaId) {
-		toSerialize["panoramaId"] = o.PanoramaId
 	}
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
@@ -970,20 +838,8 @@ func (o VerifyResponse) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Organization) {
 		toSerialize["organization"] = o.Organization
 	}
-	if !IsNil(o.Risk) {
-		toSerialize["risk"] = o.Risk
-	}
 	if !IsNil(o.Evidence) {
 		toSerialize["evidence"] = o.Evidence
-	}
-	if !IsNil(o.RiskV2) {
-		toSerialize["riskV2"] = o.RiskV2
-	}
-	if !IsNil(o.RiskV3) {
-		toSerialize["riskV3"] = o.RiskV3
-	}
-	if !IsNil(o.ScoreDetails) {
-		toSerialize["scoreDetails"] = o.ScoreDetails
 	}
 	return toSerialize, nil
 }

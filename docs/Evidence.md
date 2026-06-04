@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IpTor** | Pointer to **bool** |  | [optional] 
 **IpCountry** | Pointer to [**IPCountry**](IPCountry.md) |  | [optional] 
-**CountryOfIp** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetIpCountry sets IpCountry field to given value.
 `func (o *Evidence) HasIpCountry() bool`
 
 HasIpCountry returns a boolean if a field has been set.
-
-### GetCountryOfIp
-
-`func (o *Evidence) GetCountryOfIp() string`
-
-GetCountryOfIp returns the CountryOfIp field if non-nil, zero value otherwise.
-
-### GetCountryOfIpOk
-
-`func (o *Evidence) GetCountryOfIpOk() (*string, bool)`
-
-GetCountryOfIpOk returns a tuple with the CountryOfIp field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCountryOfIp
-
-`func (o *Evidence) SetCountryOfIp(v string)`
-
-SetCountryOfIp sets CountryOfIp field to given value.
-
-### HasCountryOfIp
-
-`func (o *Evidence) HasCountryOfIp() bool`
-
-HasCountryOfIp returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

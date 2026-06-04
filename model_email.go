@@ -30,6 +30,12 @@ type Email struct {
 	Sha256 *string `json:"sha256,omitempty"`
 	Label *string `json:"label,omitempty"`
 	Activity *float64 `json:"activity,omitempty"`
+	Hour *SignalPatternResponseUnit `json:"hour,omitempty"`
+	Day *SignalPatternResponseUnit `json:"day,omitempty"`
+	Week *SignalPatternResponseUnit `json:"week,omitempty"`
+	Month *SignalPatternResponseUnit `json:"month,omitempty"`
+	SixMonth *SignalPatternResponseUnit `json:"sixMonth,omitempty"`
+	Year *SignalPatternResponseUnit `json:"year,omitempty"`
 }
 
 // NewEmail instantiates a new Email object
@@ -369,6 +375,198 @@ func (o *Email) SetActivity(v float64) {
 	o.Activity = &v
 }
 
+// GetHour returns the Hour field value if set, zero value otherwise.
+func (o *Email) GetHour() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.Hour) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.Hour
+}
+
+// GetHourOk returns a tuple with the Hour field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetHourOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.Hour) {
+		return nil, false
+	}
+	return o.Hour, true
+}
+
+// HasHour returns a boolean if a field has been set.
+func (o *Email) HasHour() bool {
+	if o != nil && !IsNil(o.Hour) {
+		return true
+	}
+
+	return false
+}
+
+// SetHour gets a reference to the given SignalPatternResponseUnit and assigns it to the Hour field.
+func (o *Email) SetHour(v SignalPatternResponseUnit) {
+	o.Hour = &v
+}
+
+// GetDay returns the Day field value if set, zero value otherwise.
+func (o *Email) GetDay() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.Day) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.Day
+}
+
+// GetDayOk returns a tuple with the Day field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetDayOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.Day) {
+		return nil, false
+	}
+	return o.Day, true
+}
+
+// HasDay returns a boolean if a field has been set.
+func (o *Email) HasDay() bool {
+	if o != nil && !IsNil(o.Day) {
+		return true
+	}
+
+	return false
+}
+
+// SetDay gets a reference to the given SignalPatternResponseUnit and assigns it to the Day field.
+func (o *Email) SetDay(v SignalPatternResponseUnit) {
+	o.Day = &v
+}
+
+// GetWeek returns the Week field value if set, zero value otherwise.
+func (o *Email) GetWeek() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.Week) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.Week
+}
+
+// GetWeekOk returns a tuple with the Week field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetWeekOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.Week) {
+		return nil, false
+	}
+	return o.Week, true
+}
+
+// HasWeek returns a boolean if a field has been set.
+func (o *Email) HasWeek() bool {
+	if o != nil && !IsNil(o.Week) {
+		return true
+	}
+
+	return false
+}
+
+// SetWeek gets a reference to the given SignalPatternResponseUnit and assigns it to the Week field.
+func (o *Email) SetWeek(v SignalPatternResponseUnit) {
+	o.Week = &v
+}
+
+// GetMonth returns the Month field value if set, zero value otherwise.
+func (o *Email) GetMonth() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.Month) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.Month
+}
+
+// GetMonthOk returns a tuple with the Month field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetMonthOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.Month) {
+		return nil, false
+	}
+	return o.Month, true
+}
+
+// HasMonth returns a boolean if a field has been set.
+func (o *Email) HasMonth() bool {
+	if o != nil && !IsNil(o.Month) {
+		return true
+	}
+
+	return false
+}
+
+// SetMonth gets a reference to the given SignalPatternResponseUnit and assigns it to the Month field.
+func (o *Email) SetMonth(v SignalPatternResponseUnit) {
+	o.Month = &v
+}
+
+// GetSixMonth returns the SixMonth field value if set, zero value otherwise.
+func (o *Email) GetSixMonth() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.SixMonth) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.SixMonth
+}
+
+// GetSixMonthOk returns a tuple with the SixMonth field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetSixMonthOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.SixMonth) {
+		return nil, false
+	}
+	return o.SixMonth, true
+}
+
+// HasSixMonth returns a boolean if a field has been set.
+func (o *Email) HasSixMonth() bool {
+	if o != nil && !IsNil(o.SixMonth) {
+		return true
+	}
+
+	return false
+}
+
+// SetSixMonth gets a reference to the given SignalPatternResponseUnit and assigns it to the SixMonth field.
+func (o *Email) SetSixMonth(v SignalPatternResponseUnit) {
+	o.SixMonth = &v
+}
+
+// GetYear returns the Year field value if set, zero value otherwise.
+func (o *Email) GetYear() SignalPatternResponseUnit {
+	if o == nil || IsNil(o.Year) {
+		var ret SignalPatternResponseUnit
+		return ret
+	}
+	return *o.Year
+}
+
+// GetYearOk returns a tuple with the Year field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Email) GetYearOk() (*SignalPatternResponseUnit, bool) {
+	if o == nil || IsNil(o.Year) {
+		return nil, false
+	}
+	return o.Year, true
+}
+
+// HasYear returns a boolean if a field has been set.
+func (o *Email) HasYear() bool {
+	if o != nil && !IsNil(o.Year) {
+		return true
+	}
+
+	return false
+}
+
+// SetYear gets a reference to the given SignalPatternResponseUnit and assigns it to the Year field.
+func (o *Email) SetYear(v SignalPatternResponseUnit) {
+	o.Year = &v
+}
+
 func (o Email) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -408,6 +606,24 @@ func (o Email) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Activity) {
 		toSerialize["activity"] = o.Activity
+	}
+	if !IsNil(o.Hour) {
+		toSerialize["hour"] = o.Hour
+	}
+	if !IsNil(o.Day) {
+		toSerialize["day"] = o.Day
+	}
+	if !IsNil(o.Week) {
+		toSerialize["week"] = o.Week
+	}
+	if !IsNil(o.Month) {
+		toSerialize["month"] = o.Month
+	}
+	if !IsNil(o.SixMonth) {
+		toSerialize["sixMonth"] = o.SixMonth
+	}
+	if !IsNil(o.Year) {
+		toSerialize["year"] = o.Year
 	}
 	return toSerialize, nil
 }

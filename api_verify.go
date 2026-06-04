@@ -26,11 +26,17 @@ type VerifyAPIService service
 type ApiVerifyPostRequest struct {
 	ctx context.Context
 	ApiService *VerifyAPIService
-	multiFieldReq *MultiFieldReq
+	v *string
+	multiFieldReqWithOptions *MultiFieldReqWithOptions
 }
 
-func (r ApiVerifyPostRequest) MultiFieldReq(multiFieldReq MultiFieldReq) ApiVerifyPostRequest {
-	r.multiFieldReq = &multiFieldReq
+func (r ApiVerifyPostRequest) V(v string) ApiVerifyPostRequest {
+	r.v = &v
+	return r
+}
+
+func (r ApiVerifyPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiVerifyPostRequest {
+	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
 	return r
 }
 
@@ -72,6 +78,9 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.v != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "form", "")
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -90,7 +99,7 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.multiFieldReq
+	localVarPostBody = r.multiFieldReqWithOptions
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -112,6 +121,27 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 		newErr := &GenericOpenAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v StatusResponseWithMessage
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 410 {
+			var v StatusResponseWithMessage
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
