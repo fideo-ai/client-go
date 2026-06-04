@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Risk** | Pointer to **float64** |  | [optional] 
+**Checks** | Pointer to [**[]CheckResult**](CheckResult.md) |  | [optional] 
+**SessionId** | Pointer to **string** |  | [optional] 
 **AddressLine1** | Pointer to **string** |  | [optional] 
 **AddressLine2** | Pointer to **string** |  | [optional] 
 **City** | Pointer to **string** |  | [optional] 
@@ -17,19 +20,12 @@ Name | Type | Description | Notes
 **FullName** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
-**Maid** | Pointer to **string** |  | [optional] 
 **Social** | Pointer to **string** |  | [optional] 
-**NonId** | Pointer to **string** |  | [optional] 
-**PanoramaId** | Pointer to **string** |  | [optional] 
 **IpAddress** | Pointer to **string** |  | [optional] 
 **Birthday** | Pointer to **string** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
 **Organization** | Pointer to **string** |  | [optional] 
-**Risk** | Pointer to **float64** |  | [optional] 
 **Evidence** | Pointer to [**Evidence**](Evidence.md) |  | [optional] 
-**RiskV2** | Pointer to **float64** |  | [optional] 
-**RiskV3** | Pointer to **float64** |  | [optional] 
-**ScoreDetails** | Pointer to [**[]ScoreDetails**](ScoreDetails.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +45,81 @@ will change when the set of required properties is changed
 NewVerifyResponseWithDefaults instantiates a new VerifyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetRisk
+
+`func (o *VerifyResponse) GetRisk() float64`
+
+GetRisk returns the Risk field if non-nil, zero value otherwise.
+
+### GetRiskOk
+
+`func (o *VerifyResponse) GetRiskOk() (*float64, bool)`
+
+GetRiskOk returns a tuple with the Risk field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRisk
+
+`func (o *VerifyResponse) SetRisk(v float64)`
+
+SetRisk sets Risk field to given value.
+
+### HasRisk
+
+`func (o *VerifyResponse) HasRisk() bool`
+
+HasRisk returns a boolean if a field has been set.
+
+### GetChecks
+
+`func (o *VerifyResponse) GetChecks() []CheckResult`
+
+GetChecks returns the Checks field if non-nil, zero value otherwise.
+
+### GetChecksOk
+
+`func (o *VerifyResponse) GetChecksOk() (*[]CheckResult, bool)`
+
+GetChecksOk returns a tuple with the Checks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChecks
+
+`func (o *VerifyResponse) SetChecks(v []CheckResult)`
+
+SetChecks sets Checks field to given value.
+
+### HasChecks
+
+`func (o *VerifyResponse) HasChecks() bool`
+
+HasChecks returns a boolean if a field has been set.
+
+### GetSessionId
+
+`func (o *VerifyResponse) GetSessionId() string`
+
+GetSessionId returns the SessionId field if non-nil, zero value otherwise.
+
+### GetSessionIdOk
+
+`func (o *VerifyResponse) GetSessionIdOk() (*string, bool)`
+
+GetSessionIdOk returns a tuple with the SessionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSessionId
+
+`func (o *VerifyResponse) SetSessionId(v string)`
+
+SetSessionId sets SessionId field to given value.
+
+### HasSessionId
+
+`func (o *VerifyResponse) HasSessionId() bool`
+
+HasSessionId returns a boolean if a field has been set.
 
 ### GetAddressLine1
 
@@ -375,31 +446,6 @@ SetEmail sets Email field to given value.
 
 HasEmail returns a boolean if a field has been set.
 
-### GetMaid
-
-`func (o *VerifyResponse) GetMaid() string`
-
-GetMaid returns the Maid field if non-nil, zero value otherwise.
-
-### GetMaidOk
-
-`func (o *VerifyResponse) GetMaidOk() (*string, bool)`
-
-GetMaidOk returns a tuple with the Maid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaid
-
-`func (o *VerifyResponse) SetMaid(v string)`
-
-SetMaid sets Maid field to given value.
-
-### HasMaid
-
-`func (o *VerifyResponse) HasMaid() bool`
-
-HasMaid returns a boolean if a field has been set.
-
 ### GetSocial
 
 `func (o *VerifyResponse) GetSocial() string`
@@ -424,56 +470,6 @@ SetSocial sets Social field to given value.
 `func (o *VerifyResponse) HasSocial() bool`
 
 HasSocial returns a boolean if a field has been set.
-
-### GetNonId
-
-`func (o *VerifyResponse) GetNonId() string`
-
-GetNonId returns the NonId field if non-nil, zero value otherwise.
-
-### GetNonIdOk
-
-`func (o *VerifyResponse) GetNonIdOk() (*string, bool)`
-
-GetNonIdOk returns a tuple with the NonId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNonId
-
-`func (o *VerifyResponse) SetNonId(v string)`
-
-SetNonId sets NonId field to given value.
-
-### HasNonId
-
-`func (o *VerifyResponse) HasNonId() bool`
-
-HasNonId returns a boolean if a field has been set.
-
-### GetPanoramaId
-
-`func (o *VerifyResponse) GetPanoramaId() string`
-
-GetPanoramaId returns the PanoramaId field if non-nil, zero value otherwise.
-
-### GetPanoramaIdOk
-
-`func (o *VerifyResponse) GetPanoramaIdOk() (*string, bool)`
-
-GetPanoramaIdOk returns a tuple with the PanoramaId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPanoramaId
-
-`func (o *VerifyResponse) SetPanoramaId(v string)`
-
-SetPanoramaId sets PanoramaId field to given value.
-
-### HasPanoramaId
-
-`func (o *VerifyResponse) HasPanoramaId() bool`
-
-HasPanoramaId returns a boolean if a field has been set.
 
 ### GetIpAddress
 
@@ -575,31 +571,6 @@ SetOrganization sets Organization field to given value.
 
 HasOrganization returns a boolean if a field has been set.
 
-### GetRisk
-
-`func (o *VerifyResponse) GetRisk() float64`
-
-GetRisk returns the Risk field if non-nil, zero value otherwise.
-
-### GetRiskOk
-
-`func (o *VerifyResponse) GetRiskOk() (*float64, bool)`
-
-GetRiskOk returns a tuple with the Risk field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRisk
-
-`func (o *VerifyResponse) SetRisk(v float64)`
-
-SetRisk sets Risk field to given value.
-
-### HasRisk
-
-`func (o *VerifyResponse) HasRisk() bool`
-
-HasRisk returns a boolean if a field has been set.
-
 ### GetEvidence
 
 `func (o *VerifyResponse) GetEvidence() Evidence`
@@ -624,81 +595,6 @@ SetEvidence sets Evidence field to given value.
 `func (o *VerifyResponse) HasEvidence() bool`
 
 HasEvidence returns a boolean if a field has been set.
-
-### GetRiskV2
-
-`func (o *VerifyResponse) GetRiskV2() float64`
-
-GetRiskV2 returns the RiskV2 field if non-nil, zero value otherwise.
-
-### GetRiskV2Ok
-
-`func (o *VerifyResponse) GetRiskV2Ok() (*float64, bool)`
-
-GetRiskV2Ok returns a tuple with the RiskV2 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRiskV2
-
-`func (o *VerifyResponse) SetRiskV2(v float64)`
-
-SetRiskV2 sets RiskV2 field to given value.
-
-### HasRiskV2
-
-`func (o *VerifyResponse) HasRiskV2() bool`
-
-HasRiskV2 returns a boolean if a field has been set.
-
-### GetRiskV3
-
-`func (o *VerifyResponse) GetRiskV3() float64`
-
-GetRiskV3 returns the RiskV3 field if non-nil, zero value otherwise.
-
-### GetRiskV3Ok
-
-`func (o *VerifyResponse) GetRiskV3Ok() (*float64, bool)`
-
-GetRiskV3Ok returns a tuple with the RiskV3 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRiskV3
-
-`func (o *VerifyResponse) SetRiskV3(v float64)`
-
-SetRiskV3 sets RiskV3 field to given value.
-
-### HasRiskV3
-
-`func (o *VerifyResponse) HasRiskV3() bool`
-
-HasRiskV3 returns a boolean if a field has been set.
-
-### GetScoreDetails
-
-`func (o *VerifyResponse) GetScoreDetails() []ScoreDetails`
-
-GetScoreDetails returns the ScoreDetails field if non-nil, zero value otherwise.
-
-### GetScoreDetailsOk
-
-`func (o *VerifyResponse) GetScoreDetailsOk() (*[]ScoreDetails, bool)`
-
-GetScoreDetailsOk returns a tuple with the ScoreDetails field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScoreDetails
-
-`func (o *VerifyResponse) SetScoreDetails(v []ScoreDetails)`
-
-SetScoreDetails sets ScoreDetails field to given value.
-
-### HasScoreDetails
-
-`func (o *VerifyResponse) HasScoreDetails() bool`
-
-HasScoreDetails returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

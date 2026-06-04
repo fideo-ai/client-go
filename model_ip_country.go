@@ -21,16 +21,16 @@ type IPCountry string
 
 // List of IPCountry
 const (
-	DOMESTIC IPCountry = "DOMESTIC"
-	FOREIGN IPCountry = "FOREIGN"
-	UNKNOWN IPCountry = "UNKNOWN"
+	DOMESTIC IPCountry = "domestic"
+	FOREIGN IPCountry = "foreign"
+	UNKNOWN IPCountry = "unknown"
 )
 
 // All allowed values of IPCountry enum
 var AllowedIPCountryEnumValues = []IPCountry{
-	"DOMESTIC",
-	"FOREIGN",
-	"UNKNOWN",
+	"domestic",
+	"foreign",
+	"unknown",
 }
 
 func (v *IPCountry) UnmarshalJSON(src []byte) error {

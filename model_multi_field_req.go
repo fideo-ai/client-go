@@ -38,7 +38,6 @@ type MultiFieldReq struct {
 	PartnerKeys *map[string]string `json:"partnerKeys,omitempty"`
 	LiNonid *string `json:"li_nonid,omitempty"`
 	PanoramaId *string `json:"panoramaId,omitempty"`
-	Placekey *string `json:"placekey,omitempty"`
 	GeneratePid *bool `json:"generatePid,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Phone *string `json:"phone,omitempty"`
@@ -639,38 +638,6 @@ func (o *MultiFieldReq) SetPanoramaId(v string) {
 	o.PanoramaId = &v
 }
 
-// GetPlacekey returns the Placekey field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetPlacekey() string {
-	if o == nil || IsNil(o.Placekey) {
-		var ret string
-		return ret
-	}
-	return *o.Placekey
-}
-
-// GetPlacekeyOk returns a tuple with the Placekey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetPlacekeyOk() (*string, bool) {
-	if o == nil || IsNil(o.Placekey) {
-		return nil, false
-	}
-	return o.Placekey, true
-}
-
-// HasPlacekey returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasPlacekey() bool {
-	if o != nil && !IsNil(o.Placekey) {
-		return true
-	}
-
-	return false
-}
-
-// SetPlacekey gets a reference to the given string and assigns it to the Placekey field.
-func (o *MultiFieldReq) SetPlacekey(v string) {
-	o.Placekey = &v
-}
-
 // GetGeneratePid returns the GeneratePid field value if set, zero value otherwise.
 func (o *MultiFieldReq) GetGeneratePid() bool {
 	if o == nil || IsNil(o.GeneratePid) {
@@ -894,9 +861,6 @@ func (o MultiFieldReq) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PanoramaId) {
 		toSerialize["panoramaId"] = o.PanoramaId
-	}
-	if !IsNil(o.Placekey) {
-		toSerialize["placekey"] = o.Placekey
 	}
 	if !IsNil(o.GeneratePid) {
 		toSerialize["generatePid"] = o.GeneratePid

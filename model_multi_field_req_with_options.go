@@ -25,6 +25,10 @@ type MultiFieldReqWithOptions struct {
 	Confidence *string `json:"confidence,omitempty"`
 	Birthday *string `json:"birthday,omitempty"`
 	IpAddress *string `json:"ipAddress,omitempty"`
+	// Optional UUIDv7 session identifier. A recent valid value reuses an existing verify session and returns 200; omitted, blank, or old values create a new session and return 201.
+	SessionId *string `json:"sessionId,omitempty"`
+	// Optional signal-pattern interval to decorate signal email responses
+	PatternInterval *string `json:"patternInterval,omitempty"`
 	Countries []string `json:"countries,omitempty"`
 	ExcludedCountries []string `json:"excludedCountries,omitempty"`
 }
@@ -178,6 +182,70 @@ func (o *MultiFieldReqWithOptions) SetIpAddress(v string) {
 	o.IpAddress = &v
 }
 
+// GetSessionId returns the SessionId field value if set, zero value otherwise.
+func (o *MultiFieldReqWithOptions) GetSessionId() string {
+	if o == nil || IsNil(o.SessionId) {
+		var ret string
+		return ret
+	}
+	return *o.SessionId
+}
+
+// GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiFieldReqWithOptions) GetSessionIdOk() (*string, bool) {
+	if o == nil || IsNil(o.SessionId) {
+		return nil, false
+	}
+	return o.SessionId, true
+}
+
+// HasSessionId returns a boolean if a field has been set.
+func (o *MultiFieldReqWithOptions) HasSessionId() bool {
+	if o != nil && !IsNil(o.SessionId) {
+		return true
+	}
+
+	return false
+}
+
+// SetSessionId gets a reference to the given string and assigns it to the SessionId field.
+func (o *MultiFieldReqWithOptions) SetSessionId(v string) {
+	o.SessionId = &v
+}
+
+// GetPatternInterval returns the PatternInterval field value if set, zero value otherwise.
+func (o *MultiFieldReqWithOptions) GetPatternInterval() string {
+	if o == nil || IsNil(o.PatternInterval) {
+		var ret string
+		return ret
+	}
+	return *o.PatternInterval
+}
+
+// GetPatternIntervalOk returns a tuple with the PatternInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiFieldReqWithOptions) GetPatternIntervalOk() (*string, bool) {
+	if o == nil || IsNil(o.PatternInterval) {
+		return nil, false
+	}
+	return o.PatternInterval, true
+}
+
+// HasPatternInterval returns a boolean if a field has been set.
+func (o *MultiFieldReqWithOptions) HasPatternInterval() bool {
+	if o != nil && !IsNil(o.PatternInterval) {
+		return true
+	}
+
+	return false
+}
+
+// SetPatternInterval gets a reference to the given string and assigns it to the PatternInterval field.
+func (o *MultiFieldReqWithOptions) SetPatternInterval(v string) {
+	o.PatternInterval = &v
+}
+
 // GetCountries returns the Countries field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MultiFieldReqWithOptions) GetCountries() []string {
 	if o == nil {
@@ -273,6 +341,12 @@ func (o MultiFieldReqWithOptions) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IpAddress) {
 		toSerialize["ipAddress"] = o.IpAddress
+	}
+	if !IsNil(o.SessionId) {
+		toSerialize["sessionId"] = o.SessionId
+	}
+	if !IsNil(o.PatternInterval) {
+		toSerialize["patternInterval"] = o.PatternInterval
 	}
 	if o.Countries != nil {
 		toSerialize["countries"] = o.Countries

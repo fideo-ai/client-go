@@ -13,8 +13,8 @@ package fideo
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // SignalsPost200Response - struct for SignalsPost200Response
@@ -113,6 +113,20 @@ func (obj *SignalsPost200Response) GetActualInstance() (interface{}) {
 
 	if obj.SignalsResponseV20240424 != nil {
 		return obj.SignalsResponseV20240424
+	}
+
+	// all schemas are nil
+	return nil
+}
+
+// Get the actual instance value
+func (obj SignalsPost200Response) GetActualInstanceValue() (interface{}) {
+	if obj.SignalsResponseV0 != nil {
+		return *obj.SignalsResponseV0
+	}
+
+	if obj.SignalsResponseV20240424 != nil {
+		return *obj.SignalsResponseV20240424
 	}
 
 	// all schemas are nil

@@ -22,7 +22,6 @@ var _ MappedNullable = &Evidence{}
 type Evidence struct {
 	IpTor *bool `json:"ipTor,omitempty"`
 	IpCountry *IPCountry `json:"ipCountry,omitempty"`
-	CountryOfIp *string `json:"countryOfIp,omitempty"`
 }
 
 // NewEvidence instantiates a new Evidence object
@@ -106,38 +105,6 @@ func (o *Evidence) SetIpCountry(v IPCountry) {
 	o.IpCountry = &v
 }
 
-// GetCountryOfIp returns the CountryOfIp field value if set, zero value otherwise.
-func (o *Evidence) GetCountryOfIp() string {
-	if o == nil || IsNil(o.CountryOfIp) {
-		var ret string
-		return ret
-	}
-	return *o.CountryOfIp
-}
-
-// GetCountryOfIpOk returns a tuple with the CountryOfIp field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Evidence) GetCountryOfIpOk() (*string, bool) {
-	if o == nil || IsNil(o.CountryOfIp) {
-		return nil, false
-	}
-	return o.CountryOfIp, true
-}
-
-// HasCountryOfIp returns a boolean if a field has been set.
-func (o *Evidence) HasCountryOfIp() bool {
-	if o != nil && !IsNil(o.CountryOfIp) {
-		return true
-	}
-
-	return false
-}
-
-// SetCountryOfIp gets a reference to the given string and assigns it to the CountryOfIp field.
-func (o *Evidence) SetCountryOfIp(v string) {
-	o.CountryOfIp = &v
-}
-
 func (o Evidence) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -153,9 +120,6 @@ func (o Evidence) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.IpCountry) {
 		toSerialize["ipCountry"] = o.IpCountry
-	}
-	if !IsNil(o.CountryOfIp) {
-		toSerialize["countryOfIp"] = o.CountryOfIp
 	}
 	return toSerialize, nil
 }
