@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Organization** | Pointer to **string** |  | [optional] 
 **Emails** | Pointer to **[]string** |  | [optional] 
 **Phones** | Pointer to **[]string** |  | [optional] 
+**Ssns** | Pointer to **[]string** | Full SSN values as digits/dashes or SHA-256 hex digests. Verify accepts at most one. | [optional] 
 **Profiles** | Pointer to [**[]SocialProfileReq**](SocialProfileReq.md) |  | [optional] 
 **Maids** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to [**PersonNameReq**](PersonNameReq.md) |  | [optional] 
@@ -346,6 +347,31 @@ SetPhones sets Phones field to given value.
 `func (o *MultiFieldReq) HasPhones() bool`
 
 HasPhones returns a boolean if a field has been set.
+
+### GetSsns
+
+`func (o *MultiFieldReq) GetSsns() []string`
+
+GetSsns returns the Ssns field if non-nil, zero value otherwise.
+
+### GetSsnsOk
+
+`func (o *MultiFieldReq) GetSsnsOk() (*[]string, bool)`
+
+GetSsnsOk returns a tuple with the Ssns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSsns
+
+`func (o *MultiFieldReq) SetSsns(v []string)`
+
+SetSsns sets Ssns field to given value.
+
+### HasSsns
+
+`func (o *MultiFieldReq) HasSsns() bool`
+
+HasSsns returns a boolean if a field has been set.
 
 ### GetProfiles
 
