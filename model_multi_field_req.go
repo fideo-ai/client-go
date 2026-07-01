@@ -32,6 +32,8 @@ type MultiFieldReq struct {
 	Organization *string `json:"organization,omitempty"`
 	Emails []string `json:"emails,omitempty"`
 	Phones []string `json:"phones,omitempty"`
+	// Full SSN values as digits/dashes or SHA-256 hex digests. Verify accepts at most one.
+	Ssns []string `json:"ssns,omitempty"`
 	Profiles []SocialProfileReq `json:"profiles,omitempty"`
 	Maids []string `json:"maids,omitempty"`
 	Name *PersonNameReq `json:"name,omitempty"`
@@ -446,6 +448,38 @@ func (o *MultiFieldReq) SetPhones(v []string) {
 	o.Phones = v
 }
 
+// GetSsns returns the Ssns field value if set, zero value otherwise.
+func (o *MultiFieldReq) GetSsns() []string {
+	if o == nil || IsNil(o.Ssns) {
+		var ret []string
+		return ret
+	}
+	return o.Ssns
+}
+
+// GetSsnsOk returns a tuple with the Ssns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MultiFieldReq) GetSsnsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Ssns) {
+		return nil, false
+	}
+	return o.Ssns, true
+}
+
+// HasSsns returns a boolean if a field has been set.
+func (o *MultiFieldReq) HasSsns() bool {
+	if o != nil && !IsNil(o.Ssns) {
+		return true
+	}
+
+	return false
+}
+
+// SetSsns gets a reference to the given []string and assigns it to the Ssns field.
+func (o *MultiFieldReq) SetSsns(v []string) {
+	o.Ssns = v
+}
+
 // GetProfiles returns the Profiles field value if set, zero value otherwise.
 func (o *MultiFieldReq) GetProfiles() []SocialProfileReq {
 	if o == nil || IsNil(o.Profiles) {
@@ -843,6 +877,9 @@ func (o MultiFieldReq) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Phones) {
 		toSerialize["phones"] = o.Phones
+	}
+	if !IsNil(o.Ssns) {
+		toSerialize["ssns"] = o.Ssns
 	}
 	if !IsNil(o.Profiles) {
 		toSerialize["profiles"] = o.Profiles
