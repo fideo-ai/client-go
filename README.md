@@ -74,6 +74,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BetaAPI* | [**GetSignalPatternsSummary**](docs/BetaAPI.md#getsignalpatternssummary) | **Post** /beta/signals/patterns/summary | Get signal patterns summary
 *BetaAPI* | [**GetSignalPatternsTimeseries**](docs/BetaAPI.md#getsignalpatternstimeseries) | **Post** /beta/signals/patterns/timeseries | Get signal patterns timeseries
+*LensAPI* | [**LensGraph**](docs/LensAPI.md#lensgraph) | **Post** /v3/lens.graph | Query the Lens graph
 *SignalsAPI* | [**SignalsPost**](docs/SignalsAPI.md#signalspost) | **Post** /signals | 
 *VerifyAPI* | [**VerifyPost**](docs/VerifyAPI.md#verifypost) | **Post** /verify | 
 
@@ -92,6 +93,8 @@ Class | Method | HTTP request | Description
  - [Evidence](docs/Evidence.md)
  - [IPCountry](docs/IPCountry.md)
  - [IpAddress](docs/IpAddress.md)
+ - [LensGraphRequest](docs/LensGraphRequest.md)
+ - [LensGraphResponse](docs/LensGraphResponse.md)
  - [Location](docs/Location.md)
  - [LocationReq](docs/LocationReq.md)
  - [LocationType](docs/LocationType.md)

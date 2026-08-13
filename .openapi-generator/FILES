@@ -3,6 +3,7 @@
 README.md
 api/openapi.yaml
 api_beta.go
+api_lens.go
 api_signals.go
 api_verify.go
 client.go
@@ -20,6 +21,9 @@ docs/EmploymentDate.md
 docs/Evidence.md
 docs/IPCountry.md
 docs/IpAddress.md
+docs/LensAPI.md
+docs/LensGraphRequest.md
+docs/LensGraphResponse.md
 docs/Location.md
 docs/LocationReq.md
 docs/LocationType.md
@@ -62,6 +66,8 @@ model_employment_date.go
 model_evidence.go
 model_ip_address.go
 model_ip_country.go
+model_lens_graph_request.go
+model_lens_graph_response.go
 model_location.go
 model_location_req.go
 model_location_type.go
@@ -87,4 +93,5 @@ model_status_response_with_message.go
 model_verify_response.go
 response.go
 test/api_beta_test.go
+test/api_lens_test.go
 utils.go
