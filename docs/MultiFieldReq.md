@@ -22,8 +22,6 @@ Name | Type | Description | Notes
 **Maids** | Pointer to **[]string** |  | [optional] 
 **Name** | Pointer to [**PersonNameReq**](PersonNameReq.md) |  | [optional] 
 **PartnerKeys** | Pointer to **map[string]string** |  | [optional] 
-**LiNonid** | Pointer to **string** |  | [optional] 
-**PanoramaId** | Pointer to **string** |  | [optional] 
 **GeneratePid** | Pointer to **bool** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **Phone** | Pointer to **string** |  | [optional] 
@@ -498,56 +496,6 @@ SetPartnerKeys sets PartnerKeys field to given value.
 `func (o *MultiFieldReq) HasPartnerKeys() bool`
 
 HasPartnerKeys returns a boolean if a field has been set.
-
-### GetLiNonid
-
-`func (o *MultiFieldReq) GetLiNonid() string`
-
-GetLiNonid returns the LiNonid field if non-nil, zero value otherwise.
-
-### GetLiNonidOk
-
-`func (o *MultiFieldReq) GetLiNonidOk() (*string, bool)`
-
-GetLiNonidOk returns a tuple with the LiNonid field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLiNonid
-
-`func (o *MultiFieldReq) SetLiNonid(v string)`
-
-SetLiNonid sets LiNonid field to given value.
-
-### HasLiNonid
-
-`func (o *MultiFieldReq) HasLiNonid() bool`
-
-HasLiNonid returns a boolean if a field has been set.
-
-### GetPanoramaId
-
-`func (o *MultiFieldReq) GetPanoramaId() string`
-
-GetPanoramaId returns the PanoramaId field if non-nil, zero value otherwise.
-
-### GetPanoramaIdOk
-
-`func (o *MultiFieldReq) GetPanoramaIdOk() (*string, bool)`
-
-GetPanoramaIdOk returns a tuple with the PanoramaId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPanoramaId
-
-`func (o *MultiFieldReq) SetPanoramaId(v string)`
-
-SetPanoramaId sets PanoramaId field to given value.
-
-### HasPanoramaId
-
-`func (o *MultiFieldReq) HasPanoramaId() bool`
-
-HasPanoramaId returns a boolean if a field has been set.
 
 ### GetGeneratePid
 

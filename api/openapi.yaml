@@ -519,7 +519,6 @@ components:
         type: object
       example:
         birthday: birthday
-        panoramaId: panoramaId
         partnerKeys:
           key: partnerKeys
         phones:
@@ -580,7 +579,6 @@ components:
         countries:
         - countries
         - countries
-        li_nonid: li_nonid
         phone: phone
         infer: true
         organization: organization
@@ -662,10 +660,6 @@ components:
           additionalProperties:
             type: string
           type: object
-        li_nonid:
-          type: string
-        panoramaId:
-          type: string
         generatePid:
           type: boolean
         email:
