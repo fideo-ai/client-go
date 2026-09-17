@@ -52,6 +52,10 @@ type APIClient struct {
 
 	BetaAPI *BetaAPIService
 
+	LensAPI *LensAPIService
+
+	PrefillAPI *PrefillAPIService
+
 	SignalsAPI *SignalsAPIService
 
 	VerifyAPI *VerifyAPIService
@@ -74,6 +78,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 
 	// API Services
 	c.BetaAPI = (*BetaAPIService)(&c.common)
+	c.LensAPI = (*LensAPIService)(&c.common)
+	c.PrefillAPI = (*PrefillAPIService)(&c.common)
 	c.SignalsAPI = (*SignalsAPIService)(&c.common)
 	c.VerifyAPI = (*VerifyAPIService)(&c.common)
 

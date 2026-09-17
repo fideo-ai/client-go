@@ -40,8 +40,6 @@ type MultiFieldReq struct {
 	Maids []string `json:"maids,omitempty"`
 	Name *PersonNameReq `json:"name,omitempty"`
 	PartnerKeys *map[string]string `json:"partnerKeys,omitempty"`
-	LiNonid *string `json:"li_nonid,omitempty"`
-	PanoramaId *string `json:"panoramaId,omitempty"`
 	GeneratePid *bool `json:"generatePid,omitempty"`
 	Email *string `json:"email,omitempty"`
 	Phone *string `json:"phone,omitempty"`
@@ -642,70 +640,6 @@ func (o *MultiFieldReq) SetPartnerKeys(v map[string]string) {
 	o.PartnerKeys = &v
 }
 
-// GetLiNonid returns the LiNonid field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetLiNonid() string {
-	if o == nil || IsNil(o.LiNonid) {
-		var ret string
-		return ret
-	}
-	return *o.LiNonid
-}
-
-// GetLiNonidOk returns a tuple with the LiNonid field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetLiNonidOk() (*string, bool) {
-	if o == nil || IsNil(o.LiNonid) {
-		return nil, false
-	}
-	return o.LiNonid, true
-}
-
-// HasLiNonid returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasLiNonid() bool {
-	if o != nil && !IsNil(o.LiNonid) {
-		return true
-	}
-
-	return false
-}
-
-// SetLiNonid gets a reference to the given string and assigns it to the LiNonid field.
-func (o *MultiFieldReq) SetLiNonid(v string) {
-	o.LiNonid = &v
-}
-
-// GetPanoramaId returns the PanoramaId field value if set, zero value otherwise.
-func (o *MultiFieldReq) GetPanoramaId() string {
-	if o == nil || IsNil(o.PanoramaId) {
-		var ret string
-		return ret
-	}
-	return *o.PanoramaId
-}
-
-// GetPanoramaIdOk returns a tuple with the PanoramaId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MultiFieldReq) GetPanoramaIdOk() (*string, bool) {
-	if o == nil || IsNil(o.PanoramaId) {
-		return nil, false
-	}
-	return o.PanoramaId, true
-}
-
-// HasPanoramaId returns a boolean if a field has been set.
-func (o *MultiFieldReq) HasPanoramaId() bool {
-	if o != nil && !IsNil(o.PanoramaId) {
-		return true
-	}
-
-	return false
-}
-
-// SetPanoramaId gets a reference to the given string and assigns it to the PanoramaId field.
-func (o *MultiFieldReq) SetPanoramaId(v string) {
-	o.PanoramaId = &v
-}
-
 // GetGeneratePid returns the GeneratePid field value if set, zero value otherwise.
 func (o *MultiFieldReq) GetGeneratePid() bool {
 	if o == nil || IsNil(o.GeneratePid) {
@@ -929,12 +863,6 @@ func (o MultiFieldReq) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.PartnerKeys) {
 		toSerialize["partnerKeys"] = o.PartnerKeys
-	}
-	if !IsNil(o.LiNonid) {
-		toSerialize["li_nonid"] = o.LiNonid
-	}
-	if !IsNil(o.PanoramaId) {
-		toSerialize["panoramaId"] = o.PanoramaId
 	}
 	if !IsNil(o.GeneratePid) {
 		toSerialize["generatePid"] = o.GeneratePid

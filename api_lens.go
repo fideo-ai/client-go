@@ -20,67 +20,60 @@ import (
 )
 
 
-// VerifyAPIService VerifyAPI service
-type VerifyAPIService service
+// LensAPIService LensAPI service
+type LensAPIService service
 
-type ApiVerifyPostRequest struct {
+type ApiLensGraphRequest struct {
 	ctx context.Context
-	ApiService *VerifyAPIService
-	v *string
-	multiFieldReqWithOptions *MultiFieldReqWithOptions
+	ApiService *LensAPIService
+	lensGraphRequest *LensGraphRequest
 }
 
-func (r ApiVerifyPostRequest) V(v string) ApiVerifyPostRequest {
-	r.v = &v
+func (r ApiLensGraphRequest) LensGraphRequest(lensGraphRequest LensGraphRequest) ApiLensGraphRequest {
+	r.lensGraphRequest = &lensGraphRequest
 	return r
 }
 
-func (r ApiVerifyPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiVerifyPostRequest {
-	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
-	return r
-}
-
-func (r ApiVerifyPostRequest) Execute() (*VerifyResponse, *http.Response, error) {
-	return r.ApiService.VerifyPostExecute(r)
+func (r ApiLensGraphRequest) Execute() (*LensGraphResponse, *http.Response, error) {
+	return r.ApiService.LensGraphExecute(r)
 }
 
 /*
-VerifyPost Method for VerifyPost
+LensGraph Query the Lens graph
+
+Query raw or expanded Lens graph edges. Product and datapack entitlements are derived from the account contract, not from the request body.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyPostRequest
+ @return ApiLensGraphRequest
 */
-func (a *VerifyAPIService) VerifyPost(ctx context.Context) ApiVerifyPostRequest {
-	return ApiVerifyPostRequest{
+func (a *LensAPIService) LensGraph(ctx context.Context) ApiLensGraphRequest {
+	return ApiLensGraphRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VerifyResponse
-func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyResponse, *http.Response, error) {
+//  @return LensGraphResponse
+func (a *LensAPIService) LensGraphExecute(r ApiLensGraphRequest) (*LensGraphResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifyResponse
+		localVarReturnValue  *LensGraphResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VerifyAPIService.VerifyPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LensAPIService.LensGraph")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/verify"
+	localVarPath := localBasePath + "/lens.graph"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.v != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "form", "")
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -99,7 +92,7 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.multiFieldReqWithOptions
+	localVarPostBody = r.lensGraphRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -133,7 +126,7 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 410 {
+		if localVarHTTPResponse.StatusCode == 403 {
 			var v StatusResponseWithMessage
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
