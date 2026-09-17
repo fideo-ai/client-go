@@ -20,67 +20,66 @@ import (
 )
 
 
-// VerifyAPIService VerifyAPI service
-type VerifyAPIService service
+// PrefillAPIService PrefillAPI service
+type PrefillAPIService service
 
-type ApiVerifyPostRequest struct {
+type ApiPrefillRequest struct {
 	ctx context.Context
-	ApiService *VerifyAPIService
-	v *string
+	ApiService *PrefillAPIService
 	multiFieldReqWithOptions *MultiFieldReqWithOptions
 }
 
-func (r ApiVerifyPostRequest) V(v string) ApiVerifyPostRequest {
-	r.v = &v
-	return r
-}
-
-func (r ApiVerifyPostRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiVerifyPostRequest {
+func (r ApiPrefillRequest) MultiFieldReqWithOptions(multiFieldReqWithOptions MultiFieldReqWithOptions) ApiPrefillRequest {
 	r.multiFieldReqWithOptions = &multiFieldReqWithOptions
 	return r
 }
 
-func (r ApiVerifyPostRequest) Execute() (*VerifyResponse, *http.Response, error) {
-	return r.ApiService.VerifyPostExecute(r)
+func (r ApiPrefillRequest) Execute() (*PrefillResponse, *http.Response, error) {
+	return r.ApiService.PrefillExecute(r)
 }
 
 /*
-VerifyPost Method for VerifyPost
+Prefill Resolve or evaluate onboarding identity fields
+
+The customer is responsible for proving phone possession before the initial request.
+Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with
+reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are
+reused; valid session IDs older than 10 minutes start a new session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyPostRequest
+ @return ApiPrefillRequest
 */
-func (a *VerifyAPIService) VerifyPost(ctx context.Context) ApiVerifyPostRequest {
-	return ApiVerifyPostRequest{
+func (a *PrefillAPIService) Prefill(ctx context.Context) ApiPrefillRequest {
+	return ApiPrefillRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return VerifyResponse
-func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyResponse, *http.Response, error) {
+//  @return PrefillResponse
+func (a *PrefillAPIService) PrefillExecute(r ApiPrefillRequest) (*PrefillResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *VerifyResponse
+		localVarReturnValue  *PrefillResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VerifyAPIService.VerifyPost")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PrefillAPIService.Prefill")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/verify"
+	localVarPath := localBasePath + "/prefill"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-
-	if r.v != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "v", r.v, "form", "")
+	if r.multiFieldReqWithOptions == nil {
+		return localVarReturnValue, nil, reportError("multiFieldReqWithOptions is required and must be specified")
 	}
+
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -123,6 +122,17 @@ func (a *VerifyAPIService) VerifyPostExecute(r ApiVerifyPostRequest) (*VerifyRes
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
+			var v StatusResponseWithMessage
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
 			var v StatusResponseWithMessage
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

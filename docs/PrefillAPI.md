@@ -1,18 +1,18 @@
-# \LensAPI
+# \PrefillAPI
 
 All URIs are relative to *https://api.fideo.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**LensGraph**](LensAPI.md#LensGraph) | **Post** /lens.graph | Query the Lens graph
+[**Prefill**](PrefillAPI.md#Prefill) | **Post** /prefill | Resolve or evaluate onboarding identity fields
 
 
 
-## LensGraph
+## Prefill
 
-> LensGraphResponse LensGraph(ctx).LensGraphRequest(lensGraphRequest).Execute()
+> PrefillResponse Prefill(ctx).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 
-Query the Lens graph
+Resolve or evaluate onboarding identity fields
 
 
 
@@ -29,17 +29,17 @@ import (
 )
 
 func main() {
-	lensGraphRequest := *openapiclient.NewLensGraphRequest("Mode_example", "Query_example") // LensGraphRequest |  (optional)
+	multiFieldReqWithOptions := *openapiclient.NewMultiFieldReqWithOptions() // MultiFieldReqWithOptions | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.LensAPI.LensGraph(context.Background()).LensGraphRequest(lensGraphRequest).Execute()
+	resp, r, err := apiClient.PrefillAPI.Prefill(context.Background()).MultiFieldReqWithOptions(multiFieldReqWithOptions).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `LensAPI.LensGraph``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `PrefillAPI.Prefill``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `LensGraph`: LensGraphResponse
-	fmt.Fprintf(os.Stdout, "Response from `LensAPI.LensGraph`: %v\n", resp)
+	// response from `Prefill`: PrefillResponse
+	fmt.Fprintf(os.Stdout, "Response from `PrefillAPI.Prefill`: %v\n", resp)
 }
 ```
 
@@ -49,16 +49,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiLensGraphRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPrefillRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lensGraphRequest** | [**LensGraphRequest**](LensGraphRequest.md) |  | 
+ **multiFieldReqWithOptions** | [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md) |  | 
 
 ### Return type
 
-[**LensGraphResponse**](LensGraphResponse.md)
+[**PrefillResponse**](PrefillResponse.md)
 
 ### Authorization
 

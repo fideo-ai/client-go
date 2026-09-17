@@ -74,7 +74,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *BetaAPI* | [**GetSignalPatternsSummary**](docs/BetaAPI.md#getsignalpatternssummary) | **Post** /beta/signals/patterns/summary | Get signal patterns summary
 *BetaAPI* | [**GetSignalPatternsTimeseries**](docs/BetaAPI.md#getsignalpatternstimeseries) | **Post** /beta/signals/patterns/timeseries | Get signal patterns timeseries
-*LensAPI* | [**LensGraph**](docs/LensAPI.md#lensgraph) | **Post** /v3/lens.graph | Query the Lens graph
+*LensAPI* | [**LensGraph**](docs/LensAPI.md#lensgraph) | **Post** /lens.graph | Query the Lens graph
+*PrefillAPI* | [**Prefill**](docs/PrefillAPI.md#prefill) | **Post** /prefill | Resolve or evaluate onboarding identity fields
 *SignalsAPI* | [**SignalsPost**](docs/SignalsAPI.md#signalspost) | **Post** /signals | 
 *VerifyAPI* | [**VerifyPost**](docs/VerifyAPI.md#verifypost) | **Post** /verify | 
 
@@ -105,6 +106,8 @@ Class | Method | HTTP request | Description
  - [PersonNameReq](docs/PersonNameReq.md)
  - [Phone](docs/Phone.md)
  - [Photo](docs/Photo.md)
+ - [PrefillEvaluation](docs/PrefillEvaluation.md)
+ - [PrefillResponse](docs/PrefillResponse.md)
  - [ScoreDetails](docs/ScoreDetails.md)
  - [SignalPatternRecencyResponse](docs/SignalPatternRecencyResponse.md)
  - [SignalPatternResponseUnit](docs/SignalPatternResponseUnit.md)

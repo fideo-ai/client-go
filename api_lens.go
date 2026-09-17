@@ -68,7 +68,7 @@ func (a *LensAPIService) LensGraphExecute(r ApiLensGraphRequest) (*LensGraphResp
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v3/lens.graph"
+	localVarPath := localBasePath + "/lens.graph"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

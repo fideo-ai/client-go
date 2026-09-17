@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 api_beta.go
 api_lens.go
+api_prefill.go
 api_signals.go
 api_verify.go
 client.go
@@ -34,6 +35,9 @@ docs/NameWithAlias.md
 docs/PersonNameReq.md
 docs/Phone.md
 docs/Photo.md
+docs/PrefillAPI.md
+docs/PrefillEvaluation.md
+docs/PrefillResponse.md
 docs/ScoreDetails.md
 docs/SignalPatternRecencyResponse.md
 docs/SignalPatternResponseUnit.md
@@ -78,6 +82,8 @@ model_name_with_alias.go
 model_person_name_req.go
 model_phone.go
 model_photo.go
+model_prefill_evaluation.go
+model_prefill_response.go
 model_score_details.go
 model_signal_pattern_recency_response.go
 model_signal_pattern_response_unit.go
@@ -94,4 +100,5 @@ model_verify_response.go
 response.go
 test/api_beta_test.go
 test/api_lens_test.go
+test/api_prefill_test.go
 utils.go
