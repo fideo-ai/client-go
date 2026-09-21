@@ -42,9 +42,9 @@ func (r ApiPrefillRequest) Execute() (*PrefillResponse, *http.Response, error) {
 Prefill Resolve or evaluate onboarding identity fields
 
 The customer is responsible for proving phone possession before the initial request.
-Omit sessionId to resolve identity fields from a phone. Send the returned sessionId with
-reviewed or edited identity fields to receive a Verify evaluation. Recent session IDs are
-reused; valid session IDs older than 10 minutes start a new session.
+Omit sessionId to resolve identity fields from a phone and receive their evaluation.
+Send the returned sessionId with reviewed or edited identity fields to reevaluate them.
+Recent session IDs are reused; valid session IDs older than 10 minutes start a new session.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPrefillRequest

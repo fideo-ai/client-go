@@ -27,6 +27,7 @@ type PrefillResponse struct {
 	Status string `json:"status"`
 	// Resolved identity in the same multifield shape accepted by the follow-up Prefill request. The caller may review or edit these values and resubmit them with the returned sessionId.
 	Individual *MultiFieldReqWithOptions `json:"individual,omitempty"`
+	// Risk score and Verify checks for resolved fields on an initial match, the original phone fields on an initial no-match, or the fields sent with a sessionId on a reviewed request.
 	Evaluation *PrefillEvaluation `json:"evaluation,omitempty"`
 }
 

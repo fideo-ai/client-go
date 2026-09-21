@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SessionId** | **string** | UUIDv7 session identifier to send with reviewed identity data. | 
 **Status** | **string** |  | 
 **Individual** | Pointer to [**MultiFieldReqWithOptions**](MultiFieldReqWithOptions.md) | Resolved identity in the same multifield shape accepted by the follow-up Prefill request. The caller may review or edit these values and resubmit them with the returned sessionId. | [optional] 
-**Evaluation** | Pointer to [**PrefillEvaluation**](PrefillEvaluation.md) |  | [optional] 
+**Evaluation** | Pointer to [**PrefillEvaluation**](PrefillEvaluation.md) | Risk score and Verify checks for resolved fields on an initial match, the original phone fields on an initial no-match, or the fields sent with a sessionId on a reviewed request. | [optional] 
 
 ## Methods
 
