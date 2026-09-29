@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Age** | Pointer to **int32** |  | [optional] 
 **AgeRange** | Pointer to **string** |  | [optional] 
+**Birthday** | Pointer to **string** |  | [optional] 
 **Gender** | Pointer to **string** |  | [optional] 
 **LocationGeneral** | Pointer to **string** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetAgeRange sets AgeRange field to given value.
 `func (o *Demographics) HasAgeRange() bool`
 
 HasAgeRange returns a boolean if a field has been set.
+
+### GetBirthday
+
+`func (o *Demographics) GetBirthday() string`
+
+GetBirthday returns the Birthday field if non-nil, zero value otherwise.
+
+### GetBirthdayOk
+
+`func (o *Demographics) GetBirthdayOk() (*string, bool)`
+
+GetBirthdayOk returns a tuple with the Birthday field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBirthday
+
+`func (o *Demographics) SetBirthday(v string)`
+
+SetBirthday sets Birthday field to given value.
+
+### HasBirthday
+
+`func (o *Demographics) HasBirthday() bool`
+
+HasBirthday returns a boolean if a field has been set.
 
 ### GetGender
 

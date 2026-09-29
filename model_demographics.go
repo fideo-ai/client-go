@@ -22,6 +22,7 @@ var _ MappedNullable = &Demographics{}
 type Demographics struct {
 	Age *int32 `json:"age,omitempty"`
 	AgeRange *string `json:"ageRange,omitempty"`
+	Birthday *string `json:"birthday,omitempty"`
 	Gender *string `json:"gender,omitempty"`
 	LocationGeneral *string `json:"locationGeneral,omitempty"`
 }
@@ -107,6 +108,38 @@ func (o *Demographics) SetAgeRange(v string) {
 	o.AgeRange = &v
 }
 
+// GetBirthday returns the Birthday field value if set, zero value otherwise.
+func (o *Demographics) GetBirthday() string {
+	if o == nil || IsNil(o.Birthday) {
+		var ret string
+		return ret
+	}
+	return *o.Birthday
+}
+
+// GetBirthdayOk returns a tuple with the Birthday field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Demographics) GetBirthdayOk() (*string, bool) {
+	if o == nil || IsNil(o.Birthday) {
+		return nil, false
+	}
+	return o.Birthday, true
+}
+
+// HasBirthday returns a boolean if a field has been set.
+func (o *Demographics) HasBirthday() bool {
+	if o != nil && !IsNil(o.Birthday) {
+		return true
+	}
+
+	return false
+}
+
+// SetBirthday gets a reference to the given string and assigns it to the Birthday field.
+func (o *Demographics) SetBirthday(v string) {
+	o.Birthday = &v
+}
+
 // GetGender returns the Gender field value if set, zero value otherwise.
 func (o *Demographics) GetGender() string {
 	if o == nil || IsNil(o.Gender) {
@@ -186,6 +219,9 @@ func (o Demographics) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.AgeRange) {
 		toSerialize["ageRange"] = o.AgeRange
+	}
+	if !IsNil(o.Birthday) {
+		toSerialize["birthday"] = o.Birthday
 	}
 	if !IsNil(o.Gender) {
 		toSerialize["gender"] = o.Gender
